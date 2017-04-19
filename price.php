@@ -12,13 +12,16 @@
 <body>
 
 <?php 
-	// include 'header.php';
+	include 'header.php';
 	// include 'config.php';
 	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
-	// include 'footer.php';
 ?>
 
-<p id = 'p'>Price</p>
+<p>Price</p>
+
+<?php 
+	include 'footer.php';
+?>
 
 </body>
 </html>
