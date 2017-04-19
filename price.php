@@ -18,7 +18,7 @@
 	// include 'footer.php';
 ?>
 
-<p>Index</p>
+<p id = 'p'>Price</p>
 
 </body>
 </html>
