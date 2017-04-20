@@ -21,17 +21,36 @@ body {
 }
 
 /**********************/
-/* title */
+/* header */
 /**********************/
 
-h1 {
+#title {
   text-align: center;
   font-size: 3em;
 }
 
+#header {
+  text-align: center;
+}
+
 /**********************/
-/* body */
+/* price page */
 /**********************/
+
+.table {
+  color: black;
+  outline-color: black;
+}
+
+#discount {
+  text-decoration: underline;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+td h1 {
+  text-decoration: underline;
+}
 
 /**********************/
 /* footer */

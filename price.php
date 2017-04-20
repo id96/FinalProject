@@ -17,7 +17,128 @@
 	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 ?>
 
-<p>Price</p>
+<p>Pricing by Area</p>
+<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized Area, receive a $50 discount!*</p>
+
+<table>
+	<td>
+		<h1>0-1999 Sq. Ft:</h1>
+			<p>Aerial Pictures</p>
+				<ul>
+					<li>$75</li>
+				</ul>
+			<p>DSLR Photography</p>
+				<ul>
+					<li>$100</li>
+				</ul>
+			<p>Video Walk Thru (Aerial Video NOT included)</p>
+				<ul>
+					<li>$200</li>
+				</ul>
+			<p>TOTAL = $375, <span id='discount'>$325</span> with discount!</p>
+	</td>
+	<td>
+		<h1>2000-2999 Sq. Ft:</h1>
+			<p>Aerial Pictures</p>
+				<ul>
+					<li>$100</li>
+				</ul>
+			<p>DSLR Photography</p>
+				<ul>
+					<li>$125</li>
+				</ul>
+			<p>Video Walk Thru (Aerial Video NOT included)</p>
+				<ul>
+					<li>$225</li>
+				</ul>
+			<p>TOTAL = $450, <span id='discount'>$400</span> with discount!</p>
+	</td>
+	<td>
+		<h1>3000-4999 Sq. Ft:</h1>
+			<p>Aerial Pictures</p>
+				<ul>
+					<li>$125</li>
+				</ul>
+			<p>DSLR Photography</p>
+				<ul>
+					<li>$150</li>
+				</ul>
+			<p>Video Walk Thru (Aerial Video NOT included)</p>
+				<ul>
+					<li>$250</li>
+				</ul>
+			<p>TOTAL = $525, <span id='discount'>$475</span> with discount!</p>
+	</td>
+	<td>
+		<h1>>5000 Sq. Ft:</h1>
+			<p>Aerial Pictures</p>
+				<ul>
+					<li>$150</li>
+				</ul>
+			<p>DSLR Photography</p>
+				<ul>
+					<li>$175</li>
+				</ul>
+			<p>Video Walk Thru (Aerial Video NOT included)</p>
+				<ul>
+					<li>$275</li>
+				</ul>
+			<p>TOTAL = $600, <span id='discount'>$550</span> with discount!</p>
+	</td>
+</table>
+
+<h1>PRICE GENERATOR!</h1>
+
+<form action="price.php" method="post">
+	<label>Property Area</label>
+		<select class="button" name="area" required>
+			<option value= "0-1999">0-1999 Sq. Ft</option>
+			<option value="2000-2999">2000-2999 Sq. Ft</option>
+			<option value="3000-4999">3000-4999 Sq. Ft</option>
+			<option value=">5000">>5000 Sq. Ft</option>
+		</select>
+	<br>
+	<label>What Services Would You Like?</label>
+	<br>
+	<input class='button' type='checkbox' name='Aerial'>
+	<label>Aerial Pictures</label>
+	<br>
+	<input class='button' type='checkbox' name='DSLR'>
+	<label>DSLR Photography</label>
+	<br>
+	<input class='button' type='checkbox' name='Video'>
+	<label>Video Walk Thru</label>
+	<br>
+	<input class="submit_button" type="submit" name="submit_album" value="Click to submit">
+</form>
+
+<?php
+
+if(isset($_POST['submit'])){
+	$total = 0;
+	echo '$total';
+	if(isset($_POST['area'])) {
+		$area = $_POST['area']; 
+		if ($area == '0-1999') {
+			if(isset($_POST['Aerial'])){
+				$total = $total + 75;
+			}
+			if(isset($_POST['DSLR'])){
+				$total = $total + 100;
+			}
+			if(isset($_POST['Video'])){
+				$total = $total + 200;
+			}
+			if(isset($_POST['Aerial'])&&isset($_POST['DSLR'])&&isset($_POST['Video'])){
+				$total = $total - 50;
+			}
+		}
+	}
+	echo "Total = $total";
+}
+?>
+
+
 
 <?php 
 	include 'footer.php';
