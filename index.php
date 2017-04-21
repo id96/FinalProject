@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>East Coast Drones</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" type="text/css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
 		<link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
 	</head>
 <body>
 
