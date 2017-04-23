@@ -42,7 +42,7 @@ body {
   outline-color: black;
 }
 
-#discount {
+.discount {
   text-decoration: underline;
   font-weight: bolder;
   font-style: italic;
