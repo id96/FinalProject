@@ -1,4 +1,4 @@
-<h1 id='title'><a href="index.php">East Coast Drones</a></h1>
+<h1 id='title'><a href="index.php">EAST COAST DRONES</a></h1>
 <div id='header'>
 	<ul>
 		<a href="index.php">Home</a>
