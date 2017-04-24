@@ -31,7 +31,6 @@
 <p>Portfolio</p>
 
 <div id="library">
-	<h1>Our Past Clients</h1>
 	<?php 
 	// display aerial photos
 	print("<div class='aerial'>");
@@ -70,7 +69,6 @@
 		print("</div>");
 	}
 	print("</div>");
-
 
 	// display video walk thru
 	print("<div class='video'>");
