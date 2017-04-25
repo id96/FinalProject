@@ -1,16 +1,16 @@
 html, body {
   border: 0;
-  font: inherit;
   font-size: 100%;
   margin: 0;
   padding: 0;
   vertical-align: baseline;
-  color: black;
+  color: #000000;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
-  background-color: #ffffff;
-  font-family: 'Raleway', serif;
+  background-color: #1F212C;
+  font-family: 'Lato', sans-serif;
   font-size: 0.9em;
   margin: 0;
   color: black;
@@ -26,11 +26,54 @@ body {
 
 #title {
   text-align: center;
-  font-size: 3em;
+  font-size: 4em;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#title a:visited {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #header {
   text-align: center;
+    border: 1em;
+    border-color: #ffffff;
+    border-style: dashed;
+}
+
+#header a {
+    color: #ffffff;
+    padding: 5%;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+#header a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#homeimage {
+    padding: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-content: center;
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url("img_parallax.jpg");
+
+    /* Set a specific height */
+    height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /**********************/
@@ -38,8 +81,8 @@ body {
 /**********************/
 
 .table {
-  color: black;
-  outline-color: black;
+  color: #ffffff;
+  outline-color: #ffffff;
 }
 
 .discount {
@@ -105,9 +148,9 @@ td h1 {
 /**********************/
 
 #footer {
-  background-color: gray;
+  background-color: #ffffff;
   text-align: center;
-  color: white;
+  color: #1F212C;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
   position: absolute;

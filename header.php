@@ -1,5 +1,5 @@
 <h1 id='title'><a href="index.php">EAST COAST DRONES</a></h1>
-<div id='header'>
+<div id="header">
 	<ul>
 		<a href="index.php">Home</a>
 		<a href="about.php">About</a>
