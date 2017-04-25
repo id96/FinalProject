@@ -31,6 +31,10 @@ body {
   color: #ffffff;
 }
 
+#title a {
+    text-decoration: none;
+}
+
 #title a:visited {
     text-decoration: none;
     color: #ffffff;
