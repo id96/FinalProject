@@ -162,7 +162,7 @@ td h1 {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  height: 40px;
+  height: 100px;
 }
 
 #footer p {
@@ -170,3 +170,12 @@ td h1 {
   padding-top: 5px;
 }
 
+.icon {
+  height: 100px;
+  width: 100px;
+}
+
+#insta {
+  height: 85px;
+  width: 85px;
+}
