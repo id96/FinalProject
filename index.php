@@ -20,7 +20,45 @@
             // include 'config.php';
             // $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
         ?>
-                
+
+        <div class="logout_button">
+            <form action="index.php" method="post">
+                <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
+            </form>
+        </div>
+        
+        <?php
+            if(isset($_POST['logoutbutton'])) {
+                unset($_SESSION['logged_user']); 
+            }
+        ?>
+             
+        <?php 
+            include 'config.php';
+            $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
+        ?>
+    
+        <?php 
+            if(isset($_POST['submit_login'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $username = htmlentities($username);
+                $password = htmlentities($password);
+                $password_hash = password_hash($password, PASSWORD_DEFAULT);
+                $sql = "SELECT * FROM Login";
+                $result = $mysqli -> query($sql);
+                $uservalid = False;
+                while ($row = $result -> fetch_row()) {
+                    $valid_password = password_verify($password, $row[1]);
+                    $uservalid = $row[0] == $username;
+                }
+                if($valid_password && $uservalid) {
+                    $_SESSION['logged_user'] = $username;
+                }   
+            }
+        ?>
+
+
             <img id="homeimage" class="parallax" src="media/home1.jpg">
 
                 <p>Home</p>
