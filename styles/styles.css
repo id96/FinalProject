@@ -28,7 +28,8 @@ body {
   text-align: center;
   font-size: 4em;
   text-decoration: none;
-  color: black;
+  color: #000000;
+  position: absolute;
 }
 
 #title a {
@@ -64,6 +65,7 @@ body {
     margin-left: 5%;
     margin-right: 5%;
     align-content: center;
+    position: relative;
 }
 
 .parallax { 

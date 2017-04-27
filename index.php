@@ -59,7 +59,7 @@
 
             <img id="homeimage" class="parallax" src="media/home1.jpg">
 
-                <p>Home</p>
+                <p id="title">EAST COAST DRONES</p>
 
         <?php 
             include 'footer.php';
