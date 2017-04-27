@@ -220,12 +220,6 @@ td h1 {
   font-weight: normal;
   padding: 20px;
   margin: -20px -20px 50px -20px;
-  background-image: -moz-linear-gradient(#fff,#eee);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));    
-  background-image: -webkit-linear-gradient(#fff, #eee);
-  background-image: -o-linear-gradient(#fff, #eee);
-  background-image: -ms-linear-gradient(#fff, #eee);
-  background-image: linear-gradient(#fff, #eee);
 }
 
 #pricing-table h3 span {
@@ -237,12 +231,6 @@ td h1 {
   height: 100px;
   width: 100px;
   margin: 10px auto -65px;
-  -moz-border-radius: 100px;
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
-  -moz-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
-  -webkit-box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
-  box-shadow: 0 5px 20px #ddd inset, 0 3px 0 #999 inset;
 }
 
 #pricing-table ul {
@@ -254,4 +242,10 @@ td h1 {
 #pricing-table li {
   border-top: 1px solid #ddd;
   padding: 10px 0;
+}
+
+.price_body {
+  background-color: #ffffff;
+  color: black;
+
 }
