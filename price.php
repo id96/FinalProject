@@ -17,30 +17,78 @@
 	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 ?>
 
-<h1>PRICE GENERATOR!</h1>
+<h1>Pricing by Area</h1>
+<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized Area, receive a $50 discount!*</p>
 
-<form action="price.php" method="post">
-	<label>Property Area</label>
-		<select class="button" name="area" required>
-			<option value= "0-1999">0-1999 Sq. Ft</option>
-			<option value="2000-2999">2000-2999 Sq. Ft</option>
-			<option value="3000-4999">3000-4999 Sq. Ft</option>
-			<option value=">5000">>5000 Sq. Ft</option>
-		</select>
-	<br>
-	<label>What Services Would You Like?</label>
-	<br>
-	<input class='button' type='checkbox' name='Aerial'>
-	<label>Aerial Pictures</label>
-	<br>
-	<input class='button' type='checkbox' name='DSLR'>
-	<label>DSLR Photography</label>
-	<br>
-	<input class='button' type='checkbox' name='Video'>
-	<label>Video Walk Thru</label>
-	<br>
-	<input class="submit_button" type="submit" name='submit' value="Click to submit">
-</form>
+<!-- SUMMARY TABLE -->
+<div id="pricing-table" class="clear">
+    <div class="plan">
+        <h3>0-1999 Sq. Ft<span>$325</span></h3>       
+        <ul>
+            <li><b>Aerial Pictures - </b> $75</li>
+            <li><b>DSLR Photography - </b> $100</li>
+            <li><b>Video Walk Thru - </b> $200</li>		
+        </ul> 
+    </div>
+    <div class="plan">
+        <h3>2000-2999 Sq. Ft<span>$400</span></h3>        
+        <ul>
+            <li><b>Aerial Pictures - </b> $100</li>
+            <li><b>DSLR Photography - </b> $125</li>
+            <li><b>Video Walk Thru - </b> $225</li>		
+        </ul>    
+    </div>
+    <div class="plan">
+        <h3>3000-4999 Sq. Ft<span>$475</span></h3>
+        <ul>
+            <li><b>Aerial Pictures - </b> $125</li>
+            <li><b>DSLR Photography - </b> $150</li>
+            <li><b>Video Walk Thru - </b> $250</li>				
+        </ul>
+    </div>
+    <div class="plan">
+        <h3>>5000 Sq. Ft<span>$550</span></h3>		
+        <ul>
+            <li><b>Aerial Pictures - </b> $150</li>
+            <li><b>DSLR Photography - </b> $175</li>
+            <li><b>Video Walk Thru - </b> $275</li>				
+        </ul>
+    </div> 	
+</div>
+
+<!-- END OF SUMMARY TABLE -->
+
+
+<!-- PRICE GENERATOR -->
+
+
+<div class='price_form'>
+	<h1>PRICE GENERATOR!</h1>
+	<form action="price.php" method="post">
+		<label>Property Area</label>
+			<select class="button" name="area" required>
+				<option value= "0-1999">0-1999 Sq. Ft</option>
+				<option value="2000-2999">2000-2999 Sq. Ft</option>
+				<option value="3000-4999">3000-4999 Sq. Ft</option>
+				<option value=">5000">>5000 Sq. Ft</option>
+			</select>
+		<br>
+		<label>What Services Would You Like?</label>
+		<br>
+		<input class='button' type='checkbox' name='Aerial'>
+		<label>Aerial Pictures</label>
+		<br>
+		<input class='button' type='checkbox' name='DSLR'>
+		<label>DSLR Photography</label>
+		<br>
+		<input class='button' type='checkbox' name='Video'>
+		<label>Video Walk Thru</label>
+		<br>
+		<input class="submit_button" type="submit" name='submit' value="Click to submit">
+	</form>
+</div>
+
+<!-- END OF PRICE GENERATOR -->
 
 <?php
 
@@ -109,8 +157,7 @@ if(isset($_POST['submit'])) {
 }
 ?>
 
-<h1>Pricing by Area</h1>
-<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized Area, receive a $50 discount!*</p>
+<!-- PRICING TABLE -->
 
 <table>
 	<td>
