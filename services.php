@@ -16,10 +16,9 @@
 		// include 'config.php';
 		// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 	?>
-
-	<h1>Services</h1>
 	
 	<div id="container-all-services" class="main_wrapper_services">
+		<h1>Services</h1>
 		<div class="service">
 			<h2> Aerial </h2>
 			<div class="description-container">
