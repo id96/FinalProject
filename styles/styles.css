@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #000000;
   font-family: 'Lato', sans-serif;
   font-size: 0.9em;
   margin: 0;
@@ -36,29 +36,31 @@ body {
 
 #title a {
     text-decoration: none;
+    color: #ffffff;
 }
 
 #title a:visited {
     text-decoration: none;
-    color: black;
+    color: #ffffff;
 }
 
 #header {
   text-align: center;
-    border: 1em;
-    border-color: black;
-    border-style: dashed;
+    color: #ffffff;
+     border-bottom: 1em;
+    border-bottom-color: #ffffff;
+    border-bottom-style: solid;
 }
 
 #header a {
-    color: black;
-    padding: 5%;
+    color: #ffffff;
+    padding: 3%;
     text-decoration: none;
     font-size: 1.5em;
 }
 
 #header a:visited {
-    color: black;
+    color: #ffffff;
     text-decoration: none;
 }
 
