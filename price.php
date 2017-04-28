@@ -6,6 +6,7 @@
 		<title>East Coast Drones</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 	</head>
 <body>
 
@@ -19,9 +20,9 @@
 	<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized Area, receive a $50 discount!*</p>
 
 	<!-- SUMMARY TABLE -->
-	<div class="table">
-	    <td>
-		    <div class="plan">
+	<div class="container">
+		<div class="row table">
+		    <div class="plan col-lg-3 col-sm-6">
 		        <h3>0-1999 Sq. Ft</h3>       
 		        <ul>
 		            <li><b>Aerial Pictures - </b> $75</li>
@@ -30,9 +31,8 @@
 		            <li><b>TOTAL - </b><span>$325</span>, save $50!</li>	
 		        </ul> 
 		    </div>
-		</td>
-		<td>
-		    <div class="plan">
+			
+		    <div class="plan col-lg-3 col-sm-6">
 		        <h3>2000-2999 Sq. Ft</h3>        
 		        <ul>
 		            <li><b>Aerial Pictures - </b> $100</li>
@@ -41,9 +41,8 @@
 		            <li><b>TOTAL - </b><span>$400</span>, save $50!</li>	
 		        </ul>    
 		    </div>
-		</td>
-		<td>
-		    <div class="plan">
+			
+		    <div class="plan col-lg-3 col-sm-6">
 		        <h3>3000-4999 Sq. Ft</h3>
 		        <ul>
 		            <li><b>Aerial Pictures - </b> $125</li>
@@ -52,9 +51,8 @@
 		            <li><b>TOTAL - </b><span>$475</span>, save $50!</li>		
 		        </ul>
 		    </div>
-		</td>
-		<td>
-		    <div class="plan">
+			
+		    <div class="plan col-lg-3 col-sm-6">
 		        <h3>>5000 Sq. Ft</h3>		
 		        <ul>
 		            <li><b>Aerial Pictures - </b> $150</li>
@@ -62,8 +60,8 @@
 		            <li><b>Video Walk Thru - </b> $275</li>
 		            <li><b>TOTAL - </b><span>$550</span>, save $50!</li>				
 		        </ul>
-		    </div>
-		</td> 	
+		    </div>	
+		</div>
 	</div>
 
 	<!-- END OF SUMMARY TABLE -->
