@@ -57,7 +57,7 @@
         ?>
 
 
-            <img id="homeimage" src="media/home1.jpg">
+            <!-- <img id="homeimage" src="media/home1.jpg"> -->
 
                 <p id="title">EAST COAST DRONES</p>
 

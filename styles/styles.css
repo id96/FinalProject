@@ -10,6 +10,7 @@ html, body {
 
 body {
   background-color: #ffffff;
+ background-image: url("../media/home1.jpg");
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.9em;
   margin: 0;
@@ -47,12 +48,10 @@ body {
 #header {
   text-align: center;
     color: #ffffff;
-     border-bottom: 1em;
+
     text-align: center;
-   background-color: #000000;
-    border-bottom: 1em;
-    border-bottom-color: #ffffff;
-    border-bottom-style: solid;
+
+    
 }
 
 #header a {
@@ -69,13 +68,8 @@ body {
 
 #homeimage {
     width: 100%;
-<<<<<<< HEAD
-=======
-    position: relative;
-    opacity: 0.5; 
->>>>>>> 6470ae0cbd444a5afc4bb8272365c5728b254df8
     align-content: center;
-    position: relative;
+    position: fixed;
     opacity: 0.5;
 }
 
@@ -263,7 +257,7 @@ p.form_info{
   color: #1F212C;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
-  position: relative;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
