@@ -15,9 +15,6 @@
 	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 ?>
 
-<p>About</p>
-
-
 <div class="leftcol_bren">
 	<img class="bio" src="media/brendan.jpg" alt="Brendan Headshot">
 	<h1>Brendan Viselli</h1>
