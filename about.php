@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>East Coast Drones</title>
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	</head>
 <body>
@@ -14,9 +14,6 @@
 	// include 'config.php';
 	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 ?>
-
-<p>About</p>
-
 
 <div class="leftcol_bren">
 	<img class="bio" src="media/brendan.jpg" alt="Brendan Headshot">
