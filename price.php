@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>East Coast Drones</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 		<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 	</head>
