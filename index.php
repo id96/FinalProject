@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<title>East Coast Drones</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
+		<link rel="stylesheet" type="text/css" href="styles/indexstyles.css"<?php echo time(); ?>>
 	</head>
 <body>
     <?php 
