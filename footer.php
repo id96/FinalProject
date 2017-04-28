@@ -9,5 +9,6 @@
   	</div>
   	<div class='copyright'>
   		<p>© Copyright - East Coast Drones</p>
+      <a href='login.php'>Admin Link</a>
   	</div>
 </div>
