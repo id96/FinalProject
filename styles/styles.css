@@ -190,6 +190,55 @@ td h1 {
   padding-right: 50px;
 }
 
+
+/**********************/
+/* contact page */
+/**********************/
+
+.contact_head{
+	font-style: italic;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-bottom: 0%;
+	padding-top: 5%;
+	border-right: solid grey 5px;
+	border-left: solid grey 5px;
+	border-top: solid grey 5px;
+} 
+}
+
+div.contact-container{
+	width:50%;
+	margin: 2%;
+	padding: 25%;
+	
+}
+
+form.identification {
+	margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 10%;
+    padding-right: 6%;
+    padding-top: 5%;
+	line-height: 150%;
+	border-right: solid grey 5px;
+	border-left: solid grey 5px;
+}
+
+p.form_info{
+	margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 2%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    line-height: 120%;
+    float: none;
+    width: auto;
+    font-size: medium;
+    border-right: solid grey 5px;
+    border-left: solid grey 5px;
+    border-bottom: solid grey 5px;
+}
 /**********************/
 /* footer */
 /**********************/
