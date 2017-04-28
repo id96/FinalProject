@@ -18,12 +18,6 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 
-
-        <div class="logout_button">
-            <form action="index.php" method="post">
-                <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
-            </form>
-        </div>
         
         <?php
             if(isset($_POST['logoutbutton'])) {

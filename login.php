@@ -17,5 +17,12 @@
 	// include 'footer.php';
 	?>
 
+	 <div class="logout_button">
+        <form action="index.php" method="post">
+            <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
+        </form>
+    </div>
+
+
 </body>
 </html>
