@@ -51,29 +51,24 @@
 		}
 		
 		$hashed_password = password_hash($post_password, PASSWORD_DEFAULT);
-		echo "<p>Hashed password: $hashed_password</p>";
+		//echo "<p>Hashed password: $hashed_password</p>";
 		
 		//Check for a record that matches the POSTed username
 		//Note: This SQL lacks proper security. That's coming later
 		$query = "SELECT * 
 					FROM login
-					WHERE
-						username = '$post_username'";
-
-
+					WHERE username = '$post_username'";
 
 		$result = $mysqli->query($query);
 
-		
-
 		//Make sure there is exactly one user with this username
 		if ( $result && $result->num_rows == 1) {
+			unset($_SESSION['logged_user_by_sql']);
 			
 			$row = $result->fetch_assoc();
 			
 			$db_hash_password = $row['hashpassword'];
 
-			
 			if( password_verify( $post_password, $db_hash_password ) ) {
 				$db_username = $row['username'];
 				$_SESSION['logged_user_by_sql'] = $db_username;
@@ -82,7 +77,7 @@
 		
 		$mysqli->close();
 		
-		if ( isset($_SESSION['logged_user_by_sql'] ) ) {
+		if (isset($_SESSION['logged_user_by_sql'])) {
 			print("<p>Welcome, $db_username.<br>You can now edit photos!<p>");
 		} else {
 			echo '<p>You did not login successfully.</p>';
