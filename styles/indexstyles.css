@@ -12,6 +12,7 @@ body {
   background-color: #ffffff;
   background-image: url("../media/home1.jpg");
   background-repeat:no-repeat;
+  background-attachment: fixed;
   opacity: 0.5;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.9em;
