@@ -6,6 +6,7 @@
 		<title>East Coast Drones</title>
 	    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<?php
 		//Get the connection info for the DB. 
@@ -25,8 +26,6 @@
 <body>
 
 <?php include 'header.php'; ?>
-
-<p>Portfolio</p>
 
 <div id="library">
 	<?php 
