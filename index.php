@@ -6,6 +6,7 @@
 		<title>East Coast Drones</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/indexstyles.css"<?php echo time(); ?>>
+        <script type="text/javascript" src="js/main.js"></script>
 	</head>
 <body>
     <?php 
@@ -53,7 +54,15 @@
 
             <!-- <img id="homeimage" src="media/home1.jpg"> -->
 
-                <p id="title">EAST COAST DRONES</p>
+        <p id="title">EAST COAST DRONES</p>
+
+        <div class="slider" id="main-slider"><!-- outermost container element -->
+            <div class="slider-wrapper"><!-- innermost wrapper element -->
+                <img src="media/home1.jpg" alt="First" class="slide"/><!-- slides -->
+                <img src="media/pic1.jpg" alt="Second" class="slide"/>
+                <img src="media/pic2.jpg" alt="Third" class="slide"/>
+            </div>
+        </div>
 
         <?php 
             include 'footer.php';
