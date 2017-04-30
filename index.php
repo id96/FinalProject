@@ -4,8 +4,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>East Coast Drones</title>
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styles/indexstyles.css"<?php echo time(); ?>>
 	</head>
 <body>
     <?php 
@@ -18,12 +18,6 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 
-
-        <div class="logout_button">
-            <form action="index.php" method="post">
-                <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
-            </form>
-        </div>
         
         <?php
             if(isset($_POST['logoutbutton'])) {
@@ -57,9 +51,9 @@
         ?>
 
 
-            <img id="homeimage" class="parallax" src="media/home1.jpg">
+            <!-- <img id="homeimage" src="media/home1.jpg"> -->
 
-                <p>Home</p>
+                <p id="title">EAST COAST DRONES</p>
 
         <?php 
             include 'footer.php';

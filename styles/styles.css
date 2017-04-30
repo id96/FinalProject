@@ -4,16 +4,16 @@ html, body {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
-  color: black;
-  font-family: 'Lato', sans-serif;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: #FFFFFF;
-  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.9em;
   margin: 0;
-  color: black;
+  color: #000000;
   position: relative;
   margin: 0;
   padding-bottom: 6rem;
@@ -28,42 +28,48 @@ body {
   text-align: center;
   font-size: 4em;
   text-decoration: none;
-  color: black;
+  color: #000000;
+  width: 100%;
+  top: 80px;
+  position: absolute;
 }
 
 #title a {
     text-decoration: none;
+    color: #000000;
 }
 
 #title a:visited {
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 
 #header {
   text-align: center;
-    border: 1em;
-    border-color: black;
-    border-style: dashed;
+    color: #000000;
+
+    text-align: center;
+
+    
 }
 
 #header a {
-    color: black;
-    padding: 5%;
+    color: #000000;
+    padding: 6%;
     text-decoration: none;
     font-size: 1.5em;
 }
 
 #header a:visited {
-    color: black;
+    color: #000000;
     text-decoration: none;
 }
 
 #homeimage {
-    padding: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 100%;
     align-content: center;
+    position: fixed;
+    opacity: 0.5;
 }
 
 .parallax { 
@@ -99,6 +105,10 @@ td h1 {
   text-decoration: underline;
 }
 
+.price_form {
+  display: inline-block;
+}
+
 /**********************/
 /* services page */
 /**********************/
@@ -123,6 +133,46 @@ td h1 {
   margin-left: 5%;
 }
 
+.main_wrapper_services{
+	text-align: center;
+	overflow: auto;	
+}
+.main_wrapper_services h1 {
+	text-align: center;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+.service{
+	width: 33%;
+	font-family: 'Raleway', serif;
+	float: left;
+}
+.service h2{
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 0%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	background: #4484CE;
+}
+.service .description-container{
+	margin-left: 2%;
+	margin-right: 2%;
+	padding-top: 4%; 
+	padding-bottom: 4%;
+}
+.service p{
+	text-align: left;
+	width:70%;
+	padding-left: 15%;
+	padding-right: 15%;
+}
+.service li{
+	text-align: left;
+	list-style-type: none;
+	padding-left: 14%;
+	padding-bottom: 2%;
+}
 /**********************/
 /* about page */
 /**********************/
@@ -147,6 +197,59 @@ td h1 {
   padding-right: 50px;
 }
 
+.image {
+  text-align: center;
+}
+
+
+/**********************/
+/* contact page */
+/**********************/
+
+.contact_head{
+	font-style: italic;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-bottom: 0%;
+	padding-top: 5%;
+	border-right: solid grey 5px;
+	border-left: solid grey 5px;
+	border-top: solid grey 5px;
+} 
+}
+
+div.contact-container{
+	width:50%;
+	margin: 2%;
+	padding: 25%;
+	
+}
+
+form.identification {
+	margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 10%;
+    padding-right: 6%;
+    padding-top: 5%;
+	line-height: 150%;
+	border-right: solid grey 5px;
+	border-left: solid grey 5px;
+}
+
+p.form_info{
+	margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 2%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    line-height: 120%;
+    float: none;
+    width: auto;
+    font-size: medium;
+    border-right: solid grey 5px;
+    border-left: solid grey 5px;
+    border-bottom: solid grey 5px;
+}
 /**********************/
 /* footer */
 /**********************/
@@ -157,7 +260,7 @@ td h1 {
   color: #1F212C;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
@@ -173,4 +276,12 @@ td h1 {
 .icon {
   height: 70px;
   width: 70px;
+}
+
+/**********************/
+/* pricing table */
+/**********************/
+
+.table {
+  color: #000000;
 }
