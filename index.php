@@ -48,7 +48,7 @@
                 <div>DRONE PHOTOGRAPHY</div>
             </div>
             <div class="col-xs-12 col-sm-8 col-md-8 col-md-push-2 col-lg-8 col-lg-push-2 content-text"> 
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                <p>East Coast Drones strives to exceed expectations by delivering high quality aerial photography/videography, still photography, and walk-through tours, while creating meaningful relationships with clients.</p>
             </div>
         </div>
     </div>

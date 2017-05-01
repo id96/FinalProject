@@ -381,3 +381,8 @@ form .identification {
   width: 30%;
   margin-left: 5%;
 }
+
+.video {
+  text-align: center;
+  display: inline-block;
+}
