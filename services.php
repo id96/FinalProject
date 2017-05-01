@@ -23,11 +23,11 @@
 	?>
 	
 	<div id="container-all-services" class="main_wrapper_services">
-		<h1>Services</h1>
+		<h1>Great Services for any Need</h1>
 		<div class="service">
 			<h2> Aerial </h2>
 			<div class="description-container">
-				<label>Insert example picture here </label>
+				<img src="media/aerial_surveying.jpg">
 				<p>Using sUAS from DJI, our Aerial services include photography and videography. Every angle of the subject will be captured and then edited in post production to ensure high quality. </p>
 				<p> Perfect for: </p>
 				<ul>
@@ -43,7 +43,7 @@
 		<div class="service">
 			<h2> DSLR Photography </h2>
 			<div class="description-container">
-				<label>Insert example picture here </label>
+				<img src="media/dslr_living_room.jpg">
 				<p> Using Canon DSLRs, East Coast Drones can capture interior and exterior still-pictures of the subject.</p>
 				<p> Perfect for: </p>
 				<ul>
@@ -54,10 +54,10 @@
 			</div>
 		</div>
 		
-		<div class="service">
+        <div class="service">
 			<h2> Video Walk-Thru </h2>
 			<div class="description-container">
-				<label>Insert example picture here </label>
+				<iframe width="300" height="250" src="https://www.youtube.com/embed/BGz-CwtJP6Q" frameborder="0" allowfullscreen></iframe>
 				<p> Using stabilizers from DJI, a walk-thru tour of the subject can be created, producing a smooth, first person point of view for the viewer.</p>
 				<p> Perfect for: </p>
 				<ul>
@@ -69,13 +69,14 @@
 		</div>
 	
 	</div>
-
+    
+<!--
 	<div class='video'>
 		<div>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/BGz-CwtJP6Q" frameborder="0" allowfullscreen></iframe>
 		</div>
 	</div>
-
+-->
 	<?php 
 		include 'footer.php';
 	?>

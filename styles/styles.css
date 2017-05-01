@@ -211,7 +211,7 @@ header {
 	margin-bottom: 0%;
 	padding-top: 2%;
 	padding-bottom: 2%;
-	background: #4484CE;
+    background: rgba(68, 132, 206, .6)
 }
 .service .description-container{
 	margin-left: 2%;
@@ -221,7 +221,7 @@ header {
 }
 .service p{
 	text-align: left;
-	width:70%;
+	width:106%;
 	padding-left: 15%;
 	padding-right: 15%;
 }
@@ -231,6 +231,14 @@ header {
 	padding-left: 14%;
 	padding-bottom: 2%;
 }
+
+.service img {
+    width: 77%;
+    height: 250px;
+    padding-bottom: 2%;
+    
+}
+
 /**********************/
 /* about page */
 /**********************/
@@ -380,7 +388,7 @@ form .identification {
   float: left;
   width: 30%;
 }
-.dslr, .video{
+.dslr, .video{ 
   float: left;
   width: 30%;
   margin-left: 5%;
