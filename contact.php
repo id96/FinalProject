@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>East Coast Drones</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	</head>
 <body>
@@ -16,20 +16,26 @@
 ?>
 
 	<div>
-		<div class= "contact-containter">
+		<div class= "contact-container">
 			<h1 class="contact_head"> Get In Touch </h1>
-
-			<form action ="contact.php" method="GET" class="identification">
-				<p>
-				<label>First name: </label>
-				<input type="text" name="firstname" value="">
-				</p>
-				<br>
-				Last name:    
-				<input type="text" name="lastname" value=""> <br>
-				Email:
-				<input type="text" name="email"> <br>
-		
+			<form action="contact.php" method="post" class='identification'>
+				<div class='form_info'>
+					<label>Name:</label>
+					<br>
+					<input type="text" name="name" placeholder="Johnny Appleseed" required class='field_element'> 
+					<br>
+					<label>Email Address:</label>
+					<br>
+					<input type="email" name="email" placeholder="me@gmail.com" required class='field_element'/>
+					<br>
+					<label>Message:</label>
+					<br>
+					<input type="text" name="message" placeholder="Hello! We would love to work with you on this project..." required class='field_element'>
+					<br>
+					<div class='submit_button'>
+						<input type="submit" name="submit" value="submit" class='submit'>
+					</div>
+				</div>
 			</form>
 
 		</div>
