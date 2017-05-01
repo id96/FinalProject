@@ -1,14 +1,17 @@
-<div id="footer">
-	<div class='icons'>
-    	<a href='https://www.facebook.com/'><img class='icon' src = 'media/facebook.png' alt = 'Facebook Icon'></a>
-    	<a href='https://www.instagram.com/?hl=en'><img class='icon' src = 'media/insta.png' alt = 'Instagram Icon'></a>
-    	<a href='https://twitter.com/'><img class='icon' src = 'media/twitter.png' alt = 'Twitter Icon'></a>
-    	<a href='https://google.com/'><img class='icon' src = 'media/google.png' alt = 'Google Icon'></a>
-    	<a href='https://youtube.com/'><img class='icon' src = 'media/youtube.png' alt = 'YouTube Icon'></a>
-    	<a href='https://linkedin.com/'><img class='icon' src = 'media/linkedin.png' alt = 'LinkedIn Icon'></a>
-  	</div>
-  	<div class='copyright'>
-  		<p>© Copyright - East Coast Drones</p>
-      <a href='login.php'>Admin Link</a>
-  	</div>
+<div class="container-fluid footer">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-push-2 col-md-8 col-md-push-2 col-lg-8 col-lg-push-2 footer-content">
+
+      <div class="icons">
+        <a id="icon" href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+        <a id="icon" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a id="icon" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a id="icon" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        <a id="icon" href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+        <a id="icon" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      </div>
+      <div>Copyright &copy; East Coast Drones</div>
+        <a href='login.php'>Admin Link</a>
+      </div>
+  </div>
 </div>

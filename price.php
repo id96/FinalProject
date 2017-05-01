@@ -2,11 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<title>East Coast Drones</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="styles/styles.css">
-		<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+		<meta charset="UTF-8">
+	    <title>East Coast Drones</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
+	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	    <script src="https://use.fontawesome.com/252db8b05d.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
+	    <script type="text/javascript" src="js/main.js"></script>
+	    <script src="js/parallax.min.js"></script>
 	</head>
 <body>
 
@@ -15,10 +21,9 @@
 	// include 'config.php';
 	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 ?>
-<div class='price_head'>
-	<h1>Pricing Packages</h1>
+<div class='price_body'>
+	<h1>Pricing by Area</h1>
 	<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized Area, receive a $50 discount!*</p>
-</div>
 
 	<!-- SUMMARY TABLE -->
 	<div class="container">
@@ -72,31 +77,29 @@
 
 
 	<div class='price_form'>
-		<div class='price_generator'>
-			<h1>PRICE GENERATOR!</h1>
-			<form action="price.php" method="post">
-				<label>Property Area</label>
-					<select class="button" name="area" required>
-						<option value= "0-1999">0-1999 Sq. Ft</option>
-						<option value="2000-2999">2000-2999 Sq. Ft</option>
-						<option value="3000-4999">3000-4999 Sq. Ft</option>
-						<option value=">5000">>5000 Sq. Ft</option>
-					</select>
-				<br>
-				<label>What Services Would You Like?</label>
-				<br>
-				<input class='button' type='checkbox' name='Aerial'>
-				<label>Aerial Pictures</label>
-				<br>
-				<input class='button' type='checkbox' name='DSLR'>
-				<label>DSLR Photography</label>
-				<br>
-				<input class='button' type='checkbox' name='Video'>
-				<label>Video Walk Thru</label>
-				<br>
-				<input class="submit_button" type="submit" name='submit' value="Click to submit">
-			</form>
-		</div>
+		<h1>PRICE GENERATOR!</h1>
+		<form action="price.php" method="post">
+			<label>Property Area</label>
+				<select class="button" name="area" required>
+					<option value= "0-1999">0-1999 Sq. Ft</option>
+					<option value="2000-2999">2000-2999 Sq. Ft</option>
+					<option value="3000-4999">3000-4999 Sq. Ft</option>
+					<option value=">5000">>5000 Sq. Ft</option>
+				</select>
+			<br>
+			<label>What Services Would You Like?</label>
+			<br>
+			<input class='button' type='checkbox' name='Aerial'>
+			<label>Aerial Pictures</label>
+			<br>
+			<input class='button' type='checkbox' name='DSLR'>
+			<label>DSLR Photography</label>
+			<br>
+			<input class='button' type='checkbox' name='Video'>
+			<label>Video Walk Thru</label>
+			<br>
+			<input class="submit_button" type="submit" name='submit' value="Click to submit">
+		</form>
 	</div>
 
 	<!-- END OF PRICE GENERATOR -->

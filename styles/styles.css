@@ -1,97 +1,158 @@
-html, body {
-  border: 0;
-  font-size: 100%;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  color: #000000;
-  font-family: 'Roboto', sans-serif;
-}
-
 body {
-  background-color: #ffffff;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.9em;
-  margin: 0;
-  color: #000000;
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
+  padding-top: 55px;
 }
+h2 {
+  font-size: 1.2em;
+}
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+.no-gutter {
+  padding: 0;
+}
+
 
 /**********************/
-/* header */
+/* hiding navbar */
 /**********************/
-
-#title {
-  text-align: center;
-  font-size: 3em;
-  text-decoration: none;
-  color: #000000;
-  width: 100%;
-  top: 80px;
-  position: absolute;
-}
-
-#title a {
-    text-decoration: none;
-    color: #000000;
-}
-
-#title a:visited {
-    text-decoration: none;
-    color: #000000;
-}
-
-#header {
-  text-align: center;
-  color: #000000;
-  text-align: center;
-
-}
-
-#header a {
-    color: #000000;
-    padding: 4%;
-    text-decoration: none;
-    font-size: 1.5em;
-}
-
-#header a:visited {
-    color: #000000;
-    text-decoration: none;
-}
-
-#header > ul > a{
-  text-decoration: none;
-  color: gray;
-}
-
-#header > ul > a:hover {
-  color: blue;
-}
-
-#homeimage {
-    width: 100%;
-    align-content: center;
+header {
+	background: #ffffff;
+    height: 55px;
     position: fixed;
-    opacity: 0.5;
+    top: 0;
+    transition: top 0.7s ease;
+    width: 100%;
+    z-index: 100;
+    border: solid #e8e8e8 1px;
+}
+.nav-up {
+  	top: -55px;
 }
 
-.parallax { 
-    /* The image used */
-    background-image: url("img_parallax.jpg");
+/**********************/
+/* start of bootstrap */
+/**********************/
 
-    /* Set a specific height */
-    height: 500px; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.navbar {
+  margin-bottom: 0;
+  width: 100%;
+  border-radius: 0;
 }
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+}
+.navbar-nav>li {
+  float: none;
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+.content {
+  background: #ffffff;
+}
+.content .content-title {
+  padding-bottom: 50px;
+  padding-top: 100px; 
+  text-align: center;
+  font-size: 34px;
+  color: #333;
+  font-weight: 400; 
+}
+.content .content-text {
+  color: #666;
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.content-grey {
+  background: #222;
+}
+.content-grey .content-title {
+  padding-bottom: 50px;
+  padding-top: 100px; 
+  text-align: center;
+  font-size: 34px;
+  color: #ffffff;
+  font-weight: 400; 
+}
+.content-grey .content-text {
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.services {
+  background: #efefef;
+}
+.services-cell {
+  padding: 3em;
+  text-align: center;
+  padding-bottom: 4em;
+}
+
+/**********************/
+/* slideshow */
+/**********************/
+.slideshow {
+  z-index: -1;
+}
+.slideshow .slideshow-title {
+  position: absolute;
+  text-align: center;
+  font-size: 4em;
+  color: #ffffff;
+  font-weight: bold;
+  top: 45vh;
+  letter-spacing: 2px;
+}
+.slider {
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+.slider-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
+.slide {
+  z-index: -1;
+  float: left;
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s linear;
+  top: -70px;
+  -webkit-filter: brightness(70%); 
+  filter: brightness(70%);
+}
+.slider-wrapper > .slide:first-child {
+  opacity: 0.9;
+}
+
+.footer {
+  background-color: #efefef;
+}
+.footer .footer-content {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#icon {
+  font-size: 2em;
+  padding: 1em;
+}
+
+/******************** end bootstrap ********************/
+
+
 
 /**********************/
 /* price page */
@@ -288,72 +349,17 @@ form .identification {
     box-sizing: border-box;
     border-radius: 2px;
 }
-/**********************/
-/* footer */
-/**********************/
-
-#footer {
-  background-color: #ffffff;
-  text-align: center;
-  color: #1F212C;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2em;
-  position: relative;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  height: 100px;
-}
-
-#footer p {
-  margin-top: 0px;
-  padding-top: 5px;
-}
-
-.icon {
-  height: 50px;
-  width: 50px;
-}
 
 /**********************/
 /* pricing table */
 /**********************/
-
 .table {
   color: #000000;
 }
 
-
 /**********************/
 /* portfolio page */
 /**********************/
-.slider {
-  width: 100%;
-  height: 400px;
-  margin: 2em auto;
-}
-
-.slider-wrapper {
-  width: 100%;
-  height: 400px;
-  position: relative;
-}
-
-.slide {
-  z-index: -1;
-  float: left;
-  position: absolute;
-  width: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s linear;
-}
-
-.slider-wrapper > .slide:first-child {
-  opacity: 1;
-}
-
 #library {
   width: 100%;
   margin: auto;
