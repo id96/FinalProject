@@ -108,12 +108,18 @@ body {
   font-style: italic;
 }
 
-td h1 {
-  text-decoration: underline;
-}
 
 .price_form {
   display: inline-block;
+}
+
+.price_head{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.price_generator {
+  text-align: left;
 }
 
 /**********************/
@@ -131,7 +137,7 @@ td h1 {
 }
 .service{
 	width: 33%;
-	font-family: 'Raleway', serif;
+	font-family: 'Roboto', sans-serif;
 	float: left;
 }
 .service h2{
@@ -212,6 +218,7 @@ td h1 {
 	width:50%;
 	margin: 2%;
 	padding: 25%;
+  background-color: #ffffff;
 	
 }
 
