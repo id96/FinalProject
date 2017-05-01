@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 body {
   font-family: 'Roboto', sans-serif;
   padding-top: 55px;
@@ -49,6 +50,9 @@ header {
   float: none;
   display: inline-block;
   font-size: 1.2em;
+}
+.navbar-nav a {
+  color: #222;
 }
 
 .content {
