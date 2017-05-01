@@ -1,9 +1,12 @@
+
+@import url("https://fonts.googleapis.com/css?family=Roboto"); 
+
 body {
   font-family: 'Roboto', sans-serif;
   padding-top: 55px;
 }
 h2 {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 p {
   font-family: 'Roboto', sans-serif;
@@ -107,7 +110,6 @@ header {
   text-align: center;
   font-size: 4em;
   color: #ffffff;
-  font-weight: bold;
   top: 45vh;
   letter-spacing: 2px;
 }
