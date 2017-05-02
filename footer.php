@@ -15,6 +15,7 @@ if (isset($_SESSION['logged_user_by_sql'])) {
         echo '<div>Copyright &copy; East Coast Drones</div>';
           echo '<a class="links" href="login.php">Admin Link</a>';
           echo '<a class="links" href="edit.php">Edit Database</a>';
+          echo '<a class="links" href="logout.php">Log Out</a>';
         echo '</div>';
     echo '</div>';
   echo '</div>';
