@@ -1,3 +1,4 @@
+// Home Page Slideshow
 showSlides();
 function showSlides() {
     function Slideshow( element ) {
@@ -44,11 +45,6 @@ function showSlides() {
 }
 
 
-// pseudocode for interactivity
-
-
-
-
 // HIDING NAVBAR FUNCTION
 // Code taken from https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
 var didScroll;
@@ -92,18 +88,15 @@ function hasScrolled() {
 }
 
 
+// Picture Hover Interactivity
 
+// get mouseover 
 
+// add class active when mouse is over photo
+// this active class on css makes the div display over the photo
+// div contains information for each photo, pulled from the database
 
-
-
-
-
-
-
-
-
-
-
+// remove class when not over a photo
+// make the div display: none
 
 
