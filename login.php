@@ -94,7 +94,9 @@
 		
 		if (isset($_SESSION['logged_user_by_sql'])) {
 			echo "<div class='welcome'>";
-				echo "<p>Welcome, $db_username.<br>You can now edit photos!<p><br><p>The Edit Database link will now be present in the footer next to the Admin Link until you log out.<p>";
+				echo "<p>Welcome, $db_username.<br>You can now edit photos!<p>
+						<p>Go to the <a href='edit.php'>edit page</a>. </p>
+						<p>The Edit Database link will now be present in the footer next to the Admin Link until you log out.<p>";
 			echo "</div>";
 		} else {
 			echo "<div class='welcome'>";
@@ -108,7 +110,6 @@
 	?>
 
 <?php
-
 if(isset($_POST['logoutbutton'])) {
 	unset($_SESSION['logged_user_by_sql']);
 }
