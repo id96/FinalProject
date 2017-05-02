@@ -34,8 +34,17 @@ header {
   	top: -55px;
 }
 
+/**********************/
+/* login */
+/**********************/
+
 .links {
   margin-right: 10px;
+}
+
+.login_form {
+  display: inline;
+  text-align: center;
 }
 /**********************/
 /* start of bootstrap */

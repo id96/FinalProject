@@ -33,17 +33,25 @@
 
 <body>
 
- 	<h1>Login</h1>
+ 	
  	<?php 
 		$post_username = filter_input( INPUT_POST, 'username', FILTER_SANITIZE_STRING );
 		$post_password = filter_input( INPUT_POST, 'password', FILTER_SANITIZE_STRING );
 		if ( empty( $post_username ) || empty( $post_password ) ) {
 	?>
-		<form action="login.php" method="post">
-			Username: <input type="text" name="username"> <br>
-			Password: <input type="password" name="password"> <br>
-			<input type="submit" value="Submit" class='logout_button'>
-		</form>
+		<div class='login_form'>
+			<h1>Login</h1>
+			<form action="login.php" method="post">
+				Username: <input type="text" name="username"> <br>
+				Password: <input type="password" name="password"> <br> <br>
+				<input type="submit" value="Submit" class='logout_button'>
+			</form>
+			<div class="logout_button">
+		        <form action="login.php" method="post">
+		            <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
+		        </form>
+	    	</div>
+	    </div>
 	
 	<?php
 	
@@ -95,14 +103,6 @@
 	} //end if isset username and password
 	
 	?>
-
-
-
-	<div class="logout_button">
-        <form action="login.php" method="post">
-            <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
-        </form>
-    </div>
 
 <?php
 
