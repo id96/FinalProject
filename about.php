@@ -22,9 +22,9 @@
 	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 ?>
 
-<h1>About</h1>
-<p>Run by two young professionals who aim to provide our clients with the best work possible through photography and cinematography</p>
-<p>Federal Aviation Administration Part 107 Compliant</p>
+<h1 class="nav-down">About</h1>
+<p class="nav-down">Run by two young professionals who aim to provide our clients with the best work possible through photography and cinematography</p>
+
 
 
 <div class="leftcol_bren">
@@ -51,7 +51,10 @@
 
 <?php 
 	include 'footer.php';
+    
 ?>
 
+    
+<!-- echo "<p id='bottom'>Federal Aviation Administration Part 107 Compliant</p>"; -->
 </body>
 </html>

@@ -243,6 +243,12 @@ header {
 /* about page */
 /**********************/
 
+.nav-down {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
 .bio {
   width: 206px;
   height: 211px;
@@ -250,21 +256,29 @@ header {
 }
 
 .leftcol_bren {
-  width: 40%;
+  width: 48%;
   display: inline-block;
   padding-left: 50px;
   padding-right: 50px;
+  float: left;
 }
 
 .rightcol_jon {
-  width: 40%;
+  width: 48%;
   display: inline-block;
   padding-left: 50px;
   padding-right: 50px;
+  float: right;
 }
 
 .image {
   text-align: center;
+}
+
+#bottom {
+    padding-top: 20px;
+    text-align: center;
+    float: none;
 }
 
 
