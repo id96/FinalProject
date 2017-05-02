@@ -179,8 +179,18 @@ header {
 /**********************/
 
 .table {
+ margin-top: 20px;
   color: #ffffff;
   outline-color: #ffffff;
+  border-right: solid grey 5px;
+	border-left: solid grey 5px;
+	border-top: solid grey 5px;
+    border-bottom: solid grey 5px;
+    text-align: left;
+}
+
+.price_body {
+    text-align: center;
 }
 
 .discount {
@@ -196,6 +206,12 @@ header {
 
 .price {
   text-align: center;
+    border-right: solid grey 5px;
+	border-left: solid grey 5px;
+	border-top: solid grey 5px;
+    border-bottom: solid grey 5px;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .price_head{
