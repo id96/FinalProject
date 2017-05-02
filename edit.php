@@ -16,220 +16,166 @@
     <script src="js/parallax.min.js"></script>
 </head>
 
-<div class="form_wrap">
-        <div class="form">
-        <p>Edit Album</p>
-            <form action="edit.php" method="post">
-                <label>Edit which album(s)?...</label>
-                <br>
-                <?php
-                    $result = $mysqli -> query('SELECT * FROM Albums');
-                    while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='checkbox' name='album_select[]' value='$row[0]'>$row[1]<br>"; }
-                ?> 
-                <br>
-                <label>Change Album Name to...</label>
-                <br>
-                <input class="button" type="text" name="new_name" placeholder="Matisse"/>
-                <br>
-                <label>Change Album Description to...</label>
-                <br>
-                <textarea rows="4" cols="40" name="new_description" placeholder="A collection of works created by Henri Matisse"></textarea>
-                <br>
-                <label>Add existing image to selected album...</label>
-                <br>
-                <br>
-                <?php
-                    $result = $mysqli -> query('SELECT * FROM Images');
-                    while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='checkbox' name='add_album_select[]' value='$row[0]'>$row[1]<br>"; }
-                ?> 
-                <br>
-                <label>Remove existing image from selected album...</label>
-                <br>
-                <?php
-                    $result = $mysqli -> query('SELECT * FROM Images');
-                    while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='checkbox' name='remove_album_select[]' value='$row[0]'>$row[1]<br>"; }
-                ?> 
-                <br>
-                <input class="submit_button" type="submit" name="edit_album" value="Click to submit">
-            </form>
-        <p>Edit Image</p>
-            <form action="edit.php" method="post">
-                <label>Current Image:</label>
-                <br>
-                <?php
-                    $result = $mysqli -> query('SELECT * FROM Images');
-                    while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='checkbox' name='album_select[]' value='$row[0]'>$row[1]<br>"; }
-                ?> 
-                <br>
-                <label>Change Image Name to...</label>
-                <br>
-                <input class="button" type="text" name="new_image" placeholder="Nu Bleu 2"/>
-                <br>
-                <label>Change Artist to...</label>
-                <br>
-                <input class="button" type="text" name="new_artist" placeholder="Matisse"/>
-                <br>
-                <input class="submit_button" type="submit" name="edit_image" value="Click to submit">
-            </form>
+<?php 
 
-        <p>Delete Album</p>
+	$message = '';
+	//DB connection info
+	require_once 'config.php';
+
+	//Establish DB connection
+	$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+	//Was there an error connecting to the database?
+	if ($mysqli->errno) {
+		print($mysqli->error);
+		exit();
+	}
+?>
+
+<body>
+	<div class="form_wrap">
+        <div class="form">
+        <h1>Edit Media</h1>
             <form action="edit.php" method="post">
-                <label>Delete which album(s)?...</label>
+                <label>Select Media</label>
                 <br>
                 <?php
-                    $result = $mysqli -> query('SELECT * FROM Albums');
+                	// print out list of photos
+                    $result = $mysqli -> query('SELECT * FROM media');
                     while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='checkbox' name='album_select[]' value='$row[0]'>$row[1]<br>"; }
+                        print "<input class='button' type='checkbox' name='media_select[]' value='$row[0]'>$row[2]<br>"; }
                 ?> 
                 <br>
-                <input class="submit_button" type="submit" name="delete_album" value="Click to submit">
-            </form>
-        <p>Delete Image</p>
-            <form action="edit.php" method="post">
-                <label>Delete which image(s)?...</label>
+                <label>Change Photo Name to...</label>
+                <br>
+                <input class="button" type="text" name="new_name" placeholder="Title here..."/>
+                <br>
+                <label>Change Photo Description to...</label>
+                <br>
+                <textarea rows="4" cols="40" name="new_description" placeholder="Add a description..."></textarea>
+                <br>
+                <label>Add selected media to which property? </label>
+                <br>
                 <br>
                 <?php
-                    $result = $mysqli -> query('SELECT * FROM Images');
+                    $result = $mysqli -> query('SELECT * FROM property');
                     while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='checkbox' name='album_select[]' value='$row[0]'>$row[1]<br>"; }
+                        print "<input class='button' type='radio' name='add_to_property' value='$row[0]'>$row[1]<br>"; }
                 ?> 
                 <br>
-                <input class="submit_button" type="submit" name="delete_image" value="Click to submit">
-                <br>
-                <br>
-                <br>
-                <br>
+                <input class="submit_button" type="submit" name="edit_media" value="Click to submit">
             </form>
-        </div>
     </div>
 
+    <div class="form_wrap">
+        <div class="form">
+        <h1>Edit Property</h1>
+            <form action="edit.php" method="post">
+                <label>Select Property</label>
+                <br>
+                <?php
+                	// print out list of property names
+                    $result = $mysqli -> query('SELECT * FROM property');
+                    while ($row = $result -> fetch_row()) {
+                        print "<input class='button' type='checkbox' name='property_select' value='$row[0]'>$row[1]<br>"; }
+                ?> 
+                <br>
+                <label>Change Property Name to...</label>
+                <br>
+                <input class="button" type="text" name="new_name" placeholder="Title here..."/>
+                <br>
+                <label>Change Property Address to...</label>
+                <br>
+                <textarea rows="4" cols="40" name="new_address" placeholder="Add a description..."></textarea>
+                <br>
+                <br>
+                <input class="submit_button" type="submit" name="edit_property" value="Click to submit">
+            </form>
+    </div>
 <?php
-    if(isset($_POST['edit_album'])) {
-        $result = $mysqli -> query('SELECT * FROM Albums');
-        $edit_albumid = $_POST['album_select'];
+
+// editing media table
+    if(isset($_POST['edit_media'])) {
+        $result = $mysqli -> query('SELECT * FROM media');
+        $edit_mediaid = $_POST['media_select'];
         $new_name = $_POST['new_name'];
         $new_name = htmlentities($new_name);
         $new_description = $_POST['new_description'];
         $new_description = htmlentities($new_description);
 
+        // edit title and edit desciptions
         if(preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,100}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $new_description) === 1) {
-            foreach ($edit_albumid as $item) {
+            foreach ($edit_mediaid as $item) {
                 if(!empty($new_name) && !empty($new_description)) {
-                    $sql = "UPDATE Albums SET Name = '$new_name', Description = '$new_description', date_modified = CURDATE() WHERE AlbumID = $item";
+                    $sql = "UPDATE media SET title = '$new_name', description = '$new_description' WHERE mediaID = $item";
                     $result = $mysqli -> query($sql);
                 }
                 if(!empty($new_name) && empty($new_description)) {
-                    $sql = "UPDATE Albums SET Name = '$new_name', date_modified = CURDATE() WHERE AlbumID = $item";
+                    $sql = "UPDATE media SET title = '$new_name' WHERE mediaID = $item";
                     $result = $mysqli -> query($sql);
                 }
                 if(empty($new_name) && !empty($new_description)) {
-                    $sql = "UPDATE Albums SET Description = '$new_description', date_modified = CURDATE() WHERE AlbumID = $item";
+                    $sql = "UPDATE media SET description = '$new_description' WHERE mediaID = $item";
                     $result = $mysqli -> query($sql);
                 }
             }
-            echo "<div class='response'>Congrats! Your edit album was successful.</div>";
+            echo "<div class='response'>Congrats! Your edit media was successful.</div>";
         }
         else {
-            echo "<div class='response_add'>Please enter valid criteria to edit album.</div>";
+            echo "<div class='response_add'>Please enter valid criteria to edit media.</div>";
         }
 
-
-        if(isset($_POST["remove_album_select"])) {
-            $result = $mysqli -> query('SELECT * FROM ImagesinAlbums');
-            $edit_albumid = $_POST['album_select'];
-            $edit_imageid = $_POST['remove_album_select'];
+        // add property id to this media
+        if(isset($_POST['add_to_property'])) {
+            //$media = $mysqli -> query('SELECT * FROM media');
+            //$edit_mediaid = $POST['media_select'];
+            $propertyid = $_POST['add_to_property'];
+            
             // print_r($edit_imageid);
-            foreach ($edit_albumid as $item) {
-                foreach($edit_imageid as $item2) {
-                $sql = "DELETE FROM ImagesinAlbums WHERE AlbumID = $item AND ImageID = $item2";
+            foreach ($edit_mediaid as $item) {
+                $sql = "UPDATE media SET propertyID = $propertyid WHERE mediaID = $item";
                 $result = $mysqli -> query($sql);
-                }
             }
-            echo "<div class='response'>Congrats! Your edit was successful.</div>";
+            echo "<div class='response'>media has been added to the property: $propertyid</div>";
         }
-        if(isset($_POST['add_album_select'])) {
-            $result = $mysqli -> query('SELECT * FROM ImagesinAlbums');
-            $edit_albumid = $_POST['album_select'];
-            print_r($edit_albumid);
-            $edit_imageid = $_POST['add_album_select'];
-            print_r($edit_imageid);
-            foreach ($edit_albumid as $item) {
-                foreach($edit_imageid as $item2) {
-                    $sql = "INSERT INTO ImagesinAlbums(ImageID, AlbumID) VALUES('$item2', '$item')";
-                    $result = $mysqli -> query($sql);
-                }
-            }
-            echo "<div class='response'>Congrats! Your edit was successful.</div>";
-        }
+        
     }
 
-    if(isset($_POST['album_select'])) {
-        $image_id = $mysqli -> insert_id;
-        $image_select = $_POST['album_select'];
-        foreach($image_select as $item) {
-            $image_id = $mysqli -> query("INSERT INTO ImagesinAlbums(ImageID, AlbumID) VALUES ('$image_id', '$item')");
-        }
-        // echo "<div class='response'>Congrats! Your edit was successful.</div>";
-    }
-    
-    if(isset($_POST['edit_image'])) {
-        $result = $mysqli -> query('SELECT * FROM Images');
-        $edit_albumid = $_POST['album_select'];
-        $painting_title = $_POST['new_image'];
-        $painting_title = htmlentities($painting_title);
-        $new_artist = $_POST['new_artist'];
-        $new_artist = htmlentities($new_artist);
-        
-        if(preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,100}$/", $painting_title) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $new_artist) === 1) {
-            foreach ($edit_albumid as $item) {
-                if(!empty($painting_title) && !empty($new_artist)) {
-                    $sql = "UPDATE Images SET PaintingTitle = '$painting_title', Artist = '$new_artist' WHERE ImageID = $item";
-                    $result = $mysqli -> query($sql);
-                }
-                if(!empty($painting_title) && empty($new_artist)) {
-                    $sql = "UPDATE Images SET PaintingTitle = '$painting_title' WHERE ImageID = $item";
-                    $result = $mysqli -> query($sql);
-                }
-                if(empty($painting_title) && !empty($new_artist)) {
-                    $sql = "UPDATE Images SET Artist = '$new_artist' WHERE ImageID = $item";
-                    $result = $mysqli -> query($sql);
-                }
+// editing property table
+    if(isset($_POST['edit_property'])) {
+        $result = $mysqli -> query('SELECT * FROM property');
+        $edit_propertyid = $_POST['property_select'];
+        $new_name = $_POST['new_name'];
+        $new_name = htmlentities($new_name);
+        $new_address = $_POST['new_address'];
+        $new_address = htmlentities($new_address);
+
+        // edit title and edit desciptions
+        if(preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,100}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $new_address) === 1) {
+            
+            if(!empty($new_name) && !empty($new_address)) {
+                $sql = "UPDATE property SET property_name = '$new_name', address = '$new_address' WHERE propertyID = $edit_propertyid";
+                $result = $mysqli -> query($sql);
             }
-            echo "<div class='response'>Congrats! Your edit image was successful.</div>";
+            if(!empty($new_name) && empty($new_address)) {
+                $sql = "UPDATE property SET property_name = '$new_name' WHERE propertyID = $edit_propertyid";
+                $result = $mysqli -> query($sql);
+            }
+            if(empty($new_name) && !empty($new_address)) {
+                $sql = "UPDATE property SET address = '$new_address' WHERE propertyID = $edit_propertyid";
+                $result = $mysqli -> query($sql);
+            }
+            
+            echo "<div class='response'>Congrats! Your edit property was successful.</div>";
         }
         else {
-            echo "<div class='response_add'>Please enter valid edit image criteria.</div>";
+            echo "<div class='response_add'>Please enter valid criteria to edit property.</div>";
         }
-    }
-
-    if(isset($_POST["delete_album"])) {
-        $result = $mysqli -> query('SELECT * FROM Albums');
-        $edit_albumid = $_POST['album_select'];
-        foreach ($edit_albumid as $item) {
-            $sql = "DELETE FROM Albums WHERE AlbumID = $item";
-            $result = $mysqli -> query($sql);
-            }
-        echo "<div class='response'>Congrats! Your edit was successful.</div>";
-        }
-
-    if(isset($_POST["delete_image"])) {
-        $result = $mysqli -> query('SELECT * FROM Images');
-        $result2 = $mysqli2 -> query('SELECT * FROM Albums');
-        $edit_imageid = $_POST['album_select'];
-        foreach ($edit_imageid as $item) {
-            $sql = "DELETE FROM Images WHERE ImageID = $item";
-            $sql2 = "DELETE FROM ImagesinAlbums WHERE ImageID = $item";
-            $result = $mysqli -> query($sql);
-            $result2 = $mysqli2 -> query($sql2);
-        }
-        echo "<div class='response'>Congrats! Your edit was successful.</div>";
     }
 ?>
-
-
+            
+<?php 
+	include 'footer.php';
+?>
 </body>
 </html>
