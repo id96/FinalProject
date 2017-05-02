@@ -86,7 +86,7 @@
 		
 		if (isset($_SESSION['logged_user_by_sql'])) {
 			echo"<p>Welcome, $db_username.<br>You can now edit photos!<p>";
-			echo "<li><a href='edit.php'>Edit Database</a></li>";
+			echo "<a href='edit.php'>Edit Database</a>";
 		} else {
 			echo '<p>You did not login successfully.</p>';
 			echo '<p>Please <a href="login.php">try</a> again.</p>';
@@ -103,6 +103,13 @@
             <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
         </form>
     </div>
+
+<?php
+
+if(isset($_POST['logoutbutton'])) {
+	unset($_SESSION['logged_user_by_sql']);
+}
+?>
 
 <?php 
 	include 'footer.php';
