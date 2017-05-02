@@ -41,7 +41,8 @@
  					<input type="text" name="message" placeholder="Hello! We would love to work with you on this project..." required class='field_element'>
  					<br>
  					<div class='submit_button'>
- 					<input type="submit" name="submit" value="submit" class='submit'>
+ 					<input type="submit" name="submit" value="submit" class='submit'> 
+ 					<!-- idea modified from Squarespace -->
  					</div>
  				</div>
   			</form>

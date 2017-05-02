@@ -175,7 +175,11 @@ header {
 
 
 .price_form {
-  display: inline-block;
+  text-align: center;
+}
+
+.price {
+  text-align: center;
 }
 
 .price_head{
