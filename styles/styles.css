@@ -205,9 +205,10 @@ header {
 	padding-bottom: 4%;
 }
 .service{
-	width: 33%;
+	width: 30%;
 	font-family: 'Roboto', sans-serif;
-	float: left;
+    display: inline-block;
+	
 }
 .service h2{
 	margin-left: 10%;
@@ -242,6 +243,8 @@ header {
     padding-bottom: 2%;
     
 }
+
+
 
 /**********************/
 /* about page */
