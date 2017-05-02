@@ -46,6 +46,8 @@
 	 					<input type="text" name="message" placeholder="Hello! We would love to work with you on this project..." required class='field_element'>
 	 					<br>
 	 				</div>
+                    
+                    <!--Upon successful implementation, the submit button will email the owners. However, we do not want to bug them right now as we are in development. -->
 	 				<div class='submit_button'>
 		 				<input type="submit" name="submit" value="submit" class='submit'> 
 		 				<!-- idea modified from Squarespace -->
