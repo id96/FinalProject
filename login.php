@@ -85,7 +85,8 @@
 		$mysqli->close();
 		
 		if (isset($_SESSION['logged_user_by_sql'])) {
-			print("<p>Welcome, $db_username.<br>You can now edit photos!<p>");
+			echo"<p>Welcome, $db_username.<br>You can now edit photos!<p>";
+			echo "<li><a href='edit.php'>Edit Database</a></li>";
 		} else {
 			echo '<p>You did not login successfully.</p>';
 			echo '<p>Please <a href="login.php">try</a> again.</p>';
@@ -94,6 +95,8 @@
 	} //end if isset username and password
 	
 	?>
+
+
 
 	<div class="logout_button">
         <form action="login.php" method="post">
