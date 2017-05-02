@@ -35,6 +35,22 @@ header {
 }
 
 /**********************/
+/* login */
+/**********************/
+
+.links {
+  margin-right: 10px;
+}
+
+.login_form {
+  display: inline;
+  text-align: center;
+}
+
+.welcome {
+  text-align: center;
+}
+/**********************/
 /* start of bootstrap */
 /**********************/
 
@@ -368,6 +384,11 @@ form .identification {
 
 .submit_button {
   text-align: center;
+}
+
+.response {
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .field_element {

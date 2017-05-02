@@ -33,17 +33,25 @@
 
 <body>
 
- 	<h1>Login</h1>
+ 	
  	<?php 
 		$post_username = filter_input( INPUT_POST, 'username', FILTER_SANITIZE_STRING );
 		$post_password = filter_input( INPUT_POST, 'password', FILTER_SANITIZE_STRING );
 		if ( empty( $post_username ) || empty( $post_password ) ) {
 	?>
-		<form action="login.php" method="post">
-			Username: <input type="text" name="username"> <br>
-			Password: <input type="password" name="password"> <br>
-			<input type="submit" value="Submit" class='logout_button'>
-		</form>
+		<div class='login_form'>
+			<h1>Login</h1>
+			<form action="login.php" method="post">
+				Username: <input type="text" name="username"> <br>
+				Password: <input type="password" name="password"> <br> <br>
+				<input type="submit" value="Submit" class='logout_button'>
+			</form>
+			<div class="logout_button">
+		        <form action="login.php" method="post">
+		            <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
+		        </form>
+	    	</div>
+	    </div>
 	
 	<?php
 	
@@ -85,24 +93,30 @@
 		$mysqli->close();
 		
 		if (isset($_SESSION['logged_user_by_sql'])) {
-			echo"<p>Welcome, $db_username.<br>You can now edit photos!<p>";
-			echo "<li><a href='edit.php'>Edit Database</a></li>";
+			echo "<div class='welcome'>";
+				echo "<p>Welcome, $db_username.<br>You can now edit photos!<p><br><p>The Edit Database link will now be present in the footer next to the Admin Link until you log out.<p>";
+			echo "</div>";
 		} else {
-			echo '<p>You did not login successfully.</p>';
-			echo '<p>Please <a href="login.php">try</a> again.</p>';
+			echo "<div class='welcome'>";
+				echo '<p>You did not login successfully.</p>';
+				echo '<p>Please <a href="login.php">try</a> again.</p>';
+			echo "</div>";
 		}
 		
 	} //end if isset username and password
 	
 	?>
 
+<?php
 
+if(isset($_POST['logoutbutton'])) {
+	unset($_SESSION['logged_user_by_sql']);
+}
+?>
 
-	<div class="logout_button">
-        <form action="login.php" method="post">
-            <input class="logout_button" type="submit" name="logoutbutton" value="Click to logout">
-        </form>
-    </div>
+<?php 
+	include 'footer.php';
+?>
 
 
 </body>
