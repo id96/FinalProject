@@ -93,11 +93,14 @@
 		$mysqli->close();
 		
 		if (isset($_SESSION['logged_user_by_sql'])) {
-			echo"<p>Welcome, $db_username.<br>You can now edit photos!<p>";
-			echo "<a href='edit.php'>Edit Database</a>";
+			echo "<div class='welcome'>";
+				echo "<p>Welcome, $db_username.<br>You can now edit photos!<p><br><p>The Edit Database link will now be present in the footer next to the Admin Link until you log out.<p>";
+			echo "</div>";
 		} else {
-			echo '<p>You did not login successfully.</p>';
-			echo '<p>Please <a href="login.php">try</a> again.</p>';
+			echo "<div class='welcome'>";
+				echo '<p>You did not login successfully.</p>';
+				echo '<p>Please <a href="login.php">try</a> again.</p>';
+			echo "</div>";
 		}
 		
 	} //end if isset username and password
