@@ -165,7 +165,7 @@ header {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-#icon {
+.icon {
   font-size: 2em;
   padding: 1em;
 }
@@ -189,9 +189,6 @@ header {
     text-align: left;
 }
 
-.price_body {
-    text-align: center;
-}
 
 .discount {
   text-decoration: underline;
@@ -201,17 +198,23 @@ header {
 
 
 .price_form {
-  text-align: center;
+  /*text-align: center;*/
+  width: 25%;
+  margin: auto;
 }
 
 .price {
-  text-align: center;
+  /*text-align: center;*/
     border-right: solid grey 5px;
 	border-left: solid grey 5px;
 	border-top: solid grey 5px;
     border-bottom: solid grey 5px;
     width: 80%;
     margin-left: 10%;
+}
+
+.price h1 {
+  text-align: center;
 }
 
 .price_head{
@@ -392,6 +395,7 @@ form .identification {
   text-align: center;
   cursor: pointer;
   outline: none;
+  margin-bottom: 10px;
 }
 
 .submit :hover {
