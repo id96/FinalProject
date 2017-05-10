@@ -213,7 +213,11 @@ header {
     margin-left: 10%;
 }
 
-.price h1 {
+.price h1{
+  text-align: center;
+}
+
+.price p {
   text-align: center;
 }
 
@@ -226,6 +230,11 @@ header {
   text-align: left;
 }
 
+#price_response {
+  text-align: center;
+  font-size: 2.75em;
+  text-decoration-style: bold italic underline;
+}
 /**********************/
 /* services page */
 /**********************/
