@@ -261,9 +261,23 @@ header {
 	padding-top: 4%;
 	padding-bottom: 4%;
 }
+.videoWrapper {
+	position: relative;
+    min-height: 248px;
+
+}
+.videoWrapper iframe {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 77%;
+    padding-bottom: 2%;
+    margin-left: 12%;
+}
 .service{
-	width: 30%;
-	font-family: 'Roboto', sans-serif;
+	float: left;
+    width: 33%;
+    font-family: 'Roboto', sans-serif;
     display: inline-block;
 	
 }
@@ -273,6 +287,7 @@ header {
 	margin-bottom: 0%;
 	padding-top: 2%;
 	padding-bottom: 2%;
+	font-size: 110%;
     background: rgba(68, 132, 206, .6)
 }
 .service .description-container{
@@ -282,6 +297,7 @@ header {
 	padding-bottom: 4%;
 }
 .service p{
+	position: relative;
 	text-align: left;
 	width:106%;
 	padding-left: 15%;

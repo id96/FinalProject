@@ -61,7 +61,9 @@
         <div class="service">
 			<h2> Video Walk-Thru </h2>
 			<div class="description-container">
-				<iframe width="300" height="250" src="https://www.youtube.com/embed/BGz-CwtJP6Q" frameborder="0" allowfullscreen></iframe>
+				<div class= "videoWrapper">
+					<iframe width="300" height="245" src="https://www.youtube.com/embed/BGz-CwtJP6Q" frameborder="0" allowfullscreen></iframe>
+				</div>
 				<p> Using stabilizers from DJI, a walk-thru tour of the subject can be created, producing a smooth, first person point of view for the viewer.</p>
                 
                     <p> Perfect for: </p>
