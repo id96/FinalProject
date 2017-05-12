@@ -23,7 +23,8 @@
 ?>
 
 
-	<div>
+	<div class = 'main_wrapper_services'>
+		<!-- <h1>Contact</h1> -->
 		<div class= "contact-containter">
 			<h1 class="contact_head"> Get In Touch </h1>
 			<form action="contact.php" method="post" class='identification'>
@@ -43,7 +44,7 @@
 	 				<div class='response'>
 	 					<label>Your Message:</label>
 	 					<br>
-	 					<input type="text" name="message" placeholder="Hello! We would love to work with you on this project..." required class='field_element'>
+	 					<input class='message' type="text" name="message" placeholder="Hello! We would love to work with you on this project..." required class='field_element'>
 	 					<br>
 	 				</div>
                     

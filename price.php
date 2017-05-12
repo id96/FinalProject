@@ -22,7 +22,7 @@
 	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 ?>
 
-<div class='price_body'>
+<div class='main_wrapper_services'>
 	<h1>Pricing by Area</h1>
 	<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized Area, receive a $50 discount!*</p>
 
