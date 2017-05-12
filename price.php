@@ -26,7 +26,55 @@
 	<h1>Pricing by Area</h1>
 	<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized Area, receive a $50 discount!*</p>
 
-		<!-- PRICE GENERATOR -->
+
+	<!-- SUMMARY TABLE -->
+	<div class="container">
+		<div class="row table">
+		    <div class="plan col-lg-3 col-sm-6">
+		        <h3>0-1999 Sq. Ft</h3>       
+		        <ul>
+		            <b>Aerial Pictures - </b> $75<br>
+		            <b>DSLR Photography - </b> $100<br>
+		            <b>Video Walk Thru - </b> $200	<br>
+		            <b>TOTAL - </b><span>$325</span>, save $50!	
+		        </ul> 
+		    </div>
+			
+		    <div class="plan col-lg-3 col-sm-6">
+		        <h3>2000-2999 Sq. Ft</h3>        
+		        <ul>
+		            <b>Aerial Pictures - </b> $100 <br>
+		            <b>DSLR Photography - </b> $125 <br>
+		            <b>Video Walk Thru - </b> $225  <br>
+		            <b>TOTAL - </b><span>$400</span>, save $50!	
+		        </ul>    
+		    </div>
+			
+		    <div class="plan col-lg-3 col-sm-6">
+		        <h3>3000-4999 Sq. Ft</h3>
+		        <ul>
+		            <b>Aerial Pictures - </b> $125 <br>
+		            <b>DSLR Photography - </b> $150 <br>
+		            <b>Video Walk Thru - </b> $250 <br>		
+		            <b>TOTAL - </b><span>$475</span>, save $50!		
+		        </ul>
+		    </div>
+			
+		    <div class="plan col-lg-3 col-sm-6">
+		        <h3>>5000 Sq. Ft</h3>		
+		        <ul>
+		            <b>Aerial Pictures - </b> $150 <br>
+		            <b>DSLR Photography - </b> $175 <br>
+		            <b>Video Walk Thru - </b> $275 <br>
+		            <b>TOTAL - </b><span>$550</span>, save $50!				
+		        </ul>
+		    </div>	
+		</div>
+	
+
+	<!-- END OF SUMMARY TABLE -->
+
+	<!-- PRICE GENERATOR -->
 
 		
 		<div class='price'>
@@ -56,6 +104,7 @@
 				</form>
 			</div>
 		</div>
+	</div>
 
 	<!-- END OF PRICE GENERATOR -->
 
@@ -126,52 +175,7 @@
 	}
 	?>
 
-	<!-- SUMMARY TABLE -->
-	<div class="container">
-		<div class="row table">
-		    <div class="plan col-lg-3 col-sm-6">
-		        <h3>0-1999 Sq. Ft</h3>       
-		        <ul>
-		            <b>Aerial Pictures - </b> $75<br>
-		            <b>DSLR Photography - </b> $100<br>
-		            <b>Video Walk Thru - </b> $200	<br>
-		            <b>TOTAL - </b><span>$325</span>, save $50!	
-		        </ul> 
-		    </div>
-			
-		    <div class="plan col-lg-3 col-sm-6">
-		        <h3>2000-2999 Sq. Ft</h3>        
-		        <ul>
-		            <b>Aerial Pictures - </b> $100 <br>
-		            <b>DSLR Photography - </b> $125 <br>
-		            <b>Video Walk Thru - </b> $225  <br>
-		            <b>TOTAL - </b><span>$400</span>, save $50!	
-		        </ul>    
-		    </div>
-			
-		    <div class="plan col-lg-3 col-sm-6">
-		        <h3>3000-4999 Sq. Ft</h3>
-		        <ul>
-		            <b>Aerial Pictures - </b> $125 <br>
-		            <b>DSLR Photography - </b> $150 <br>
-		            <b>Video Walk Thru - </b> $250 <br>		
-		            <b>TOTAL - </b><span>$475</span>, save $50!		
-		        </ul>
-		    </div>
-			
-		    <div class="plan col-lg-3 col-sm-6">
-		        <h3>>5000 Sq. Ft</h3>		
-		        <ul>
-		            <b>Aerial Pictures - </b> $150 <br>
-		            <b>DSLR Photography - </b> $175 <br>
-		            <b>Video Walk Thru - </b> $275 <br>
-		            <b>TOTAL - </b><span>$550</span>, save $50!				
-		        </ul>
-		    </div>	
-		</div>
-	</div>
 
-	<!-- END OF SUMMARY TABLE -->
 	
 
 <?php 

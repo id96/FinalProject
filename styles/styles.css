@@ -274,9 +274,9 @@ header {
     padding-bottom: 2%;
     margin-left: 12%;
 }
-.service{
-	float: left;
-    width: 33%;
+.service {
+	/*float: left;*/
+    /*width: 33%;*/
     font-family: 'Roboto', sans-serif;
     display: inline-block;
 	
@@ -288,7 +288,7 @@ header {
 	padding-top: 2%;
 	padding-bottom: 2%;
 	font-size: 110%;
-    background: rgba(68, 132, 206, .6)
+  background: rgba(68, 132, 206, .6)
 }
 .service .description-container{
 	margin-left: 2%;
@@ -296,7 +296,7 @@ header {
 	padding-top: 4%; 
 	padding-bottom: 4%;
 }
-.service p{
+.service p {
 	position: relative;
 	text-align: left;
 	width:106%;
@@ -317,8 +317,6 @@ header {
     
 }
 
-
-
 /**********************/
 /* about page */
 /**********************/
@@ -331,6 +329,8 @@ header {
 .about_content {
   background-color: #ffffff;
   text-align: center;
+  overflow: auto;
+  font-size: 1.1em;
 }
 
 .bio {
@@ -340,21 +340,27 @@ header {
 }
 
 .leftcol_bren {
-  width: 48%;
+  /*width: 48%;*/
   display: inline-block;
   padding-left: 50px;
   padding-right: 50px;
   float: left;
   background-color: #ffffff;
+  margin-top: 30px;
+  text-align: left;
+  margin-bottom: 50px;
 }
 
 .rightcol_jon {
-  width: 48%;
+  /*width: 48%;*/
   display: inline-block;
   padding-left: 50px;
   padding-right: 50px;
   float: right;
   background-color: #ffffff;
+  margin-top: 30px;
+  text-align: left;
+  margin-bottom: 50px;
 }
 
 .image {
@@ -367,6 +373,9 @@ header {
     float: none;
 }
 
+.contact_info {
+  font-size: 1.25em;
+}
 
 /**********************/
 /* contact page */
@@ -514,11 +523,11 @@ form {
 }
 .aerial {
   float: left;
-  width: 30%;
+  /*width: 30%;*/
 }
 .dslr, .video{ 
   float: left;
-  width: 30%;
+  /*width: 30%;*/
   margin-left: 5%;
 }
 
