@@ -44,7 +44,7 @@
 	// display aerial photos
 	echo "<div class='container'>";
 		echo '<div class="row table">';
-			echo '<div class="plan col-lg-4 col-md-4 col-sm-8">';
+			echo '<div class="plan col-lg-12 col-md-10 col-sm-8">';
 				print("<div class='aerial'>");
 					print('<p>AERIAL</p>');
 					while ($row = $aerial->fetch_assoc()){
@@ -57,7 +57,7 @@
 						$href = "photo.php?media_id=$media_id"; 
 						
 						// constructs unique url for each photo
-						print("<div class='media'>");
+						print("<div class='media col-xs-12 col-sm-12 col-md-3 col-lg-3'>");
 							print("<a href='$href' title='$href'><img src='$file' alt='$title'></a>"); 
 						print("</div>"); //end of media div
 					}
@@ -78,7 +78,7 @@
 						$href = "photo.php?media_id=$media_id"; 
 						
 						// constructs unique url for each photo
-						print("<div class='media'>");
+						print("<div class='media col-xs-12 col-sm-12 col-md-3 col-lg-3'>");
 							print("<a href='$href' title='$href'><img src='$file' alt='$title'></a>"); 
 						print("</div>"); // end of media div
 					}
