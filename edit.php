@@ -33,64 +33,74 @@
 ?>
 
 <body>
-	<div class="form_wrap">
-        <div class="form">
-        <h1>Edit Media</h1>
-            <form action="edit.php" method="post">
-                <label>Select Media</label>
-                <br>
-                <?php
-                	// print out list of photos
-                    $result = $mysqli -> query('SELECT * FROM media');
-                    while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='checkbox' name='media_select[]' value='$row[0]'>$row[2]<br>"; }
-                ?> 
-                <br>
-                <label>Change Photo Name to...</label>
-                <br>
-                <input class="button" type="text" name="new_name" placeholder="Title here..."/>
-                <br>
-                <label>Change Photo Description to...</label>
-                <br>
-                <textarea rows="4" cols="40" name="new_description" placeholder="Add a description..."></textarea>
-                <br>
-                <label>Add selected media to which property? </label>
-                <br>
-                <br>
-                <?php
-                    $result = $mysqli -> query('SELECT * FROM property');
-                    while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='radio' name='add_to_property' value='$row[0]'>$row[1]<br>"; }
-                ?> 
-                <br>
-                <input class="submit_button" type="submit" name="edit_media" value="Click to submit">
-            </form>
-    </div>
+    <div class='container'>
+        <div class="row table">
+            <div class="main_wrapper_services">
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
+                	<div class="form_wrap">
+                        <div class="form">
+                        <h1>Edit Media</h1>
+                            <form action="edit.php" method="post">
+                                <label>Select Media</label>
+                                <br>
+                                <?php
+                                	// print out list of photos
+                                    $result = $mysqli -> query('SELECT * FROM media');
+                                    while ($row = $result -> fetch_row()) {
+                                        print "<input class='button' type='checkbox' name='media_select[]' value='$row[0]'>$row[2]<br>"; }
+                                ?> 
+                                <br>
+                                <label>Change Photo Name to...</label>
+                                <br>
+                                <input class="button" type="text" name="new_name" placeholder="Title here..."/>
+                                <br>
+                                <label>Change Photo Description to...</label>
+                                <br>
+                                <textarea rows="4" cols="40" name="new_description" placeholder="Add a description..."></textarea>
+                                <br>
+                                <label>Add selected media to which property? </label>
+                                <br>
+                                <br>
+                                <?php
+                                    $result = $mysqli -> query('SELECT * FROM property');
+                                    while ($row = $result -> fetch_row()) {
+                                        print "<input class='button' type='radio' name='add_to_property' value='$row[0]'>$row[1]<br>"; }
+                                ?> 
+                                <br>
+                                <input class="submit_button" type="submit" name="edit_media" value="Click to submit">
+                            </form>
+                    </div>
+                </div>
 
-    <div class="form_wrap">
-        <div class="form">
-        <h1>Edit Property</h1>
-            <form action="edit.php" method="post">
-                <label>Select Property</label>
-                <br>
-                <?php
-                	// print out list of property names
-                    $result = $mysqli -> query('SELECT * FROM property');
-                    while ($row = $result -> fetch_row()) {
-                        print "<input class='button' type='checkbox' name='property_select' value='$row[0]'>$row[1]<br>"; }
-                ?> 
-                <br>
-                <label>Change Property Name to...</label>
-                <br>
-                <input class="button" type="text" name="new_name" placeholder="Title here..."/>
-                <br>
-                <label>Change Property Address to...</label>
-                <br>
-                <textarea rows="4" cols="40" name="new_address" placeholder="Add a description..."></textarea>
-                <br>
-                <br>
-                <input class="submit_button" type="submit" name="edit_property" value="Click to submit">
-            </form>
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
+                    <div class="form_wrap">
+                        <div class="form">
+                        <h1>Edit Property</h1>
+                            <form action="edit.php" method="post">
+                                <label>Select Property</label>
+                                <br>
+                                <?php
+                                	// print out list of property names
+                                    $result = $mysqli -> query('SELECT * FROM property');
+                                    while ($row = $result -> fetch_row()) {
+                                        print "<input class='button' type='checkbox' name='property_select' value='$row[0]'>$row[1]<br>"; }
+                                ?> 
+                                <br>
+                                <label>Change Property Name to...</label>
+                                <br>
+                                <input class="button" type="text" name="new_name" placeholder="Title here..."/>
+                                <br>
+                                <label>Change Property Address to...</label>
+                                <br>
+                                <textarea rows="4" cols="40" name="new_address" placeholder="Add a description..."></textarea>
+                                <br>
+                                <br>
+                                <input class="submit_button" type="submit" name="edit_property" value="Click to submit">
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>    
     </div>
 <?php
 
