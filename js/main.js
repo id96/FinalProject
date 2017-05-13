@@ -1,5 +1,8 @@
 // Home Page Slideshow
-showSlides();
+if (top.location.pathname === '/index.php'){
+    showSlides();
+}
+
 function showSlides() {
     function Slideshow( element ) {
         this.el = document.querySelector( element );
@@ -88,15 +91,80 @@ function hasScrolled() {
 }
 
 
-// Picture Hover Interactivity
+// image resizing
+$(window).load(function() {
+    $('.small-img').each(function() {
+        var imgClass = (this.width / this.height > 1) ? 'wide' : 'tall';
+        $(this).addClass(imgClass);
+    })
+})
 
-// get mouseover 
-
-// add class active when mouse is over photo
-// this active class on css makes the div display over the photo
-// div contains information for each photo, pulled from the database
-
-// remove class when not over a photo
-// make the div display: none
+$('.small-img').click(function on() {
+    document.getElementById("overlay").style.display = "block";
+});
 
 
+// overlay effect for aerial portfolio
+function openModal() {
+  document.getElementById('myModal-aerial').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal-aerial').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  
+  var slides = document.getElementsByClassName("mySlides-aerial");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+
+// overlay effect for dslr portfolio
+function openModalDSLR() {
+  document.getElementById('myModal-dslr').style.display = "block";
+}
+
+function closeModalDSLR() {
+  document.getElementById('myModal-dslr').style.display = "none";
+}
+
+var slideIndexDSLR = 1;
+showSlidesDSLR(slideIndexDSLR);
+
+function plusSlidesDSLR(n) {
+  showSlidesDSLR(slideIndexDSLR += n);
+}
+
+function currentSlideDSLR(n) {
+  showSlidesDSLR(slideIndexDSLR = n);
+}
+
+function showSlidesDSLR(n) {
+  var i;
+  
+  var slidesDSLR = document.getElementsByClassName("mySlides-dslr");
+  if (n > slidesDSLR.length) {slideIndexDSLR = 1}
+  if (n < 1) {slideIndexDSLR = slidesDSLR.length}
+  for (i = 0; i < slidesDSLR.length; i++) {
+      slidesDSLR[i].style.display = "none";
+  }
+  slidesDSLR[slideIndexDSLR-1].style.display = "block";
+}

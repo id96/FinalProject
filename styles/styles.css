@@ -498,17 +498,113 @@ form .identification {
 /**********************/
 .media {
   padding: 5px;
+  height: 200px;
 }
-.media img {
-  max-width: 100%;
-  height: 150px;
+.media a{
+  height: 100%;
+  width: 100%;
 }
 .media a:hover {
   opacity: 0.7;
 }
 .aerial, .dslr, .video {
   text-align: center;
+  padding-bottom: 5%;
 }
+.media img.wide {
+    max-width: 100%;
+/*    max-height: 100%;*/
+    height: auto;
+}
+.media img.tall {
+    /*max-height: 100%;*/
+    max-width: 100%;
+    width: auto;
+}
+
+/* Overlay Effect */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 3%;
+  left: 0;
+  top: 55px;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+/* Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  z-index: 10;
+}
+.close:hover,
+.close:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*slideshow*/
+.mySlides-aerial, .mySlides-dslr {
+  display: none;
+  text-align: center;
+}
+.mySlides-aerial img, .mySlides-dslr img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.mySlides-aerial p, .mySlides-dslr p {
+  color: #ffffff;
+}
+.cursor {
+  cursor: pointer
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+
 
 #logout-page {
   margin-top: 20vh;

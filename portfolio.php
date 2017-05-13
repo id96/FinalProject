@@ -27,8 +27,7 @@
 		print($mysqli->error);
 		exit();
 	}
-	$aerial = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Aerial'");
-	$dslr = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'DSLR'");
+	
 ?>
 
 <body>
@@ -40,46 +39,134 @@
 </div>
 
 <?php 
-// display aerial photos
 echo "<div class='container'>";
 	echo '<div class="row table">';
-		echo '<div class="aerial col-lg-12 col-md-10 col-sm-8">';
-				print('<h1>AERIAL</h1>');
-				while ($row = $aerial->fetch_assoc()){
-					$media_id = $row['mediaID'];
-					$property_id = $row['propertyID'];
-					$title = $row['title'];
-					$description = $row['description'];
-					$file = $row['file_path'];
-					$type = $row['type_of_photography'];
-					$href = "photo.php?media_id=$media_id"; 
-			
-					// constructs unique url for each photo
-					print("<div class='media col-xs-12 col-sm-12 col-md-2 col-lg-2'>");
-						print("<a href='$href' title='$href'><img src='$file' alt='$title'></a>"); 
-					print("</div>"); //end of media div
-				}
-		echo '</div>'; // end of aerial div
+?>
 
-		echo '<div class="dslr col-lg-12 col-md-10 col-sm-8">';
-			// display DSLR photos
-				print('<h1>DSLR</h1>');
-				while ($row = $dslr->fetch_assoc()){
-					$media_id = $row['mediaID'];
-					$property_id = $row['propertyID'];
-					$title = $row['title'];
-					$description = $row['description'];
-					$file = $row['file_path'];
-					$type = $row['type_of_photography'];
-					$href = "photo.php?media_id=$media_id"; 
-					
-					// constructs unique url for each photo
-					print("<div class='media col-xs-12 col-sm-12 col-md-3 col-lg-3'>");
-						print("<a href='$href' title='$href'><img src='$file' alt='$title'></a>"); 
-					print("</div>"); // end of media div
-				}
-		echo '</div>'; //end of dslr div 
+<!-- START AERIAL PORTFOLIO -->
+<div class="aerial col-lg-12 col-md-12 col-sm-8">
+	<h1>AERIAL</h1>
+	 <?php
+	 	// get photos from DB
+	 	$aerial = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Aerial'");
+	    $i = 0;
+	    while ($row = $aerial->fetch_assoc()){
+	      $media_id = $row['mediaID'];
+	      $property_id = $row['propertyID'];
+	      $title = $row['title'];
+	      $description = $row['description'];
+	      $file = $row['file_path'];
+	      $type = $row['type_of_photography'];
+	  
+	      print("<div class='media col-xs-12 col-sm-12 col-md-3 col-lg-3'>");
 
+	        echo "<img src='$file' style='width:100%' onclick='openModal();currentSlide($i)' class='cursor'>";
+
+	      print("</div>"); //end of media div
+
+	      $i++;
+	    }
+	?>
+</div>
+
+<div id="myModal-aerial" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+  <?php 
+  //get all photos from DB for overlay effect
+  $aerial = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Aerial'");
+    
+    while ($row = $aerial->fetch_assoc()){
+      $media_id = $row['mediaID'];
+      $property_id = $row['propertyID'];
+      $title = $row['title'];
+      $description = $row['description'];
+      $type = $row['type_of_photography'];
+      $file = $row['file_path'];
+
+      echo "<div class='mySlides-aerial'>";
+
+        echo "<img src='$file' style='max-height:75vh' class='center-block'>"; 
+        echo "<p>$title</p>";
+        echo "<p>$description</p>";
+
+      echo "</div>"; //end of myslides
+
+      $i++;
+    }
+  ?>  
+  <!-- buttons -->
+  <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div> <!-- end of modal content -->
+</div> <!-- end of modal div -->
+<!-- end of AERIAL section -->
+
+
+
+
+<!-- START DSLR PORTFOLIO -->
+<div class="dslr col-lg-12 col-md-12 col-sm-8">
+	<h1>DSLR</h1>
+	 <?php
+	 	// get photos from DB
+	 	$dslr = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'DSLR'");
+	    $j = 0;
+	    while ($row = $dslr->fetch_assoc()){
+	      $media_id = $row['mediaID'];
+	      $property_id = $row['propertyID'];
+	      $title = $row['title'];
+	      $description = $row['description'];
+	      $file = $row['file_path'];
+	      $type = $row['type_of_photography'];
+	  
+	      print("<div class='media col-xs-12 col-sm-12 col-md-3 col-lg-3'>");
+
+	        echo "<img src='$file' style='width:100%' onclick='openModalDSLR(); currentSlideDSLR($j)' class='cursor'>";
+
+	      print("</div>"); //end of media div
+	      $j++;
+	    }
+	?>
+</div>
+
+<div id="myModal-dslr" class="modal">
+  <span class="close cursor" onclick="closeModalDSLR()">&times;</span>
+  <div class="modal-content">
+  <?php 
+  	// get photos from DB for overlay effect
+  	$dslr = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'DSLR'");
+    
+    while ($row = $dslr->fetch_assoc()){
+      $media_id = $row['mediaID'];
+      $property_id = $row['propertyID'];
+      $title = $row['title'];
+      $description = $row['description'];
+      $type = $row['type_of_photography'];
+      $file = $row['file_path'];
+
+      echo "<div class='mySlides-dslr'>";
+        echo "<img src='$file' style='max-height:75vh' class='center-block'>"; 
+        echo "<p>$title</p>";
+        echo "<p>$description</p>";
+      echo "</div>"; //end of myslides DSLR
+
+    }
+  ?>  
+  <!-- buttons -->
+  <a class="prev" onclick='plusSlidesDSLR(-1)'>&#10094;</a>
+  <a class="next" onclick="plusSlidesDSLR(1)">&#10095;</a>
+
+  </div> <!-- end of modal content -->
+</div> <!-- end of modal div -->
+<!-- end of DSLR section -->
+
+
+
+
+
+<?php
 		echo '<div class="video col-lg-12 col-md-10 col-sm-8">';
 			// display video walk thru
 				print('<h1>VIDEO WALK-THRU</h1>');
