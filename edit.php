@@ -318,10 +318,6 @@
         echo "<div class='response'>Congrats! Your edit was successful.</div>";
     }
 
-
-
-
-
 ?>
 
 <?php 
