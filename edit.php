@@ -34,9 +34,9 @@
 
 <body>
     <div class='container'>
-        <div class="row table">
-            <div class="main_wrapper_services">
-                <div class='plan col-lg-6 col-md-6 col-sm-8'>
+        <div class="main_wrapper_services">
+            <div class="col-lg-12 col-md-12 col-sm-12"> 
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
                     <h3 class='price_generator'>Edit Media</h3>
                     <form class='price_generator' action="edit.php" method="post">
                         <label>Select Media</label>
@@ -69,7 +69,7 @@
                     </form>
                 </div>
 
-                <div class='plan col-lg-6 col-md-6 col-sm-8'>
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
                     <h3 class='price_generator'>Edit Property</h3>
                     <form class='price_generator' action="edit.php" method="post">
                         <label>Select Property</label>
@@ -94,22 +94,7 @@
                     </form>
                 </div> <!-- end of plan div --> 
 
-                <div class='plan col-lg-6 col-md-6 col-sm-8'>
-                    <h3 class='price_generator'>Add Property</h3>
-                    <form class='price_generator' action="edit.php" method="post">
-                        <label>Property Name:</label>
-                        <br>
-                        <input class="button" type="text" name="property_name" placeholder="Title here..." required/>
-                        <br>
-                        <label>Property Address:</label>
-                        <br>
-                        <textarea rows="4" cols="40" name="prop_address" placeholder="Description here..." required></textarea>
-                        <br>
-                        <input class="submit_button" type="submit" name="add_property" value="Click to submit">
-                    </form>
-                </div>
-
-                <div class='plan col-lg-6 col-md-6 col-sm-8'>
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
                     <h3 class='price_generator'>Add an image to a property</h3>
                     <form class='price_generator' method="post" enctype="multipart/form-data">
                         <label>Upload Photo:</label>
@@ -139,7 +124,24 @@
                     </form>
                 </div> <!-- end of plan div  -->
 
-                <div class='plan col-lg-6 col-md-6 col-sm-8'>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
+                    <h3 class='price_generator'>Add Property</h3>
+                    <form class='price_generator' action="edit.php" method="post">
+                        <label>Property Name:</label>
+                        <br>
+                        <input class="button" type="text" name="property_name" placeholder="Title here..." required/>
+                        <br>
+                        <label>Property Address:</label>
+                        <br>
+                        <textarea rows="4" cols="40" name="prop_address" placeholder="Description here..." required></textarea>
+                        <br>
+                        <input class="submit_button" type="submit" name="add_property" value="Click to submit">
+                    </form>
+                </div>
+
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
                     <h3 class='price_generator'>Delete a property</h3>
                     <form class='price_generator' action="edit.php" method="post">
                         <label>Delete which property?</label>
@@ -154,7 +156,7 @@
                     </form>
                 </div>
 
-                <div class='plan col-lg-6 col-md-6 col-sm-8'>
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
                     <h3 class='price_generator'>Delete image from property</h3>
                     <form class='price_generator' action="edit.php" method="post">
                         <label>Delete which image?</label>
@@ -168,10 +170,11 @@
                         <input class="submit_button" type="submit" name="delete_image" value="Click to submit">
                     </form>
                 </div>
-
-            </div>    <!-- end of main wrapper div  -->
-        </div> <!-- end of row table div  -->
+               
+            </div>
+        </div>
     </div> <!-- end of container div -->
+
 
 <?php
 // editing media table
@@ -294,10 +297,10 @@
             move_uploaded_file($temp_name, "media/$original_name");
             $sql = "INSERT INTO media(title, description, file_path, type_of_photography, date_taken) VALUES ('$title', '$photo_description', 'media/$original_name', '$photo_type', CURDATE() )";
             var_dump($sql);
-            // if ($mysqli -> query($sql)){
-            //     $image_id = $mysqli -> insert_id;
-            //     //var_dump($image_id);
-            // }
+            if ($mysqli -> query($sql)){
+                $image_id = $mysqli -> insert_id;
+                //var_dump($image_id);
+            }
             // if (isset($_POST['property_select'])) {
             //     $image_id = $mysqli -> insert_id;
             //     //var_dump($image_id);
@@ -311,9 +314,9 @@
 
     if(isset($_POST["delete_property"])) {
         $result = $mysqli -> query('SELECT * FROM property');
-        $edit_albumid = $_POST['album_select'];
+        $edit_albumid = $_POST['property_select'];
         foreach ($edit_albumid as $item) {
-            $sql = "DELETE FROM property WHERE AlbumID = $item";
+            $sql = "DELETE FROM property WHERE propertyID = $item";
             $result = $mysqli -> query($sql);
             }
         echo "<div class='response'>Congrats! Your edit was successful.</div>";
@@ -321,13 +324,10 @@
 
     if(isset($_POST["delete_image"])) {
         $result = $mysqli -> query('SELECT * FROM media');
-        $result2 = $mysqli2 -> query('SELECT * FROM property');
-        $edit_imageid = $_POST['album_select'];
+        $edit_imageid = $_POST['media_select'];
         foreach ($edit_imageid as $item) {
             $sql = "DELETE FROM media WHERE mediaID = $item";
-            $sql2 = "DELETE FROM ImagesinAlbums WHERE ImageID = $item";
             $result = $mysqli -> query($sql);
-            $result2 = $mysqli2 -> query($sql2);
         }
         echo "<div class='response'>Congrats! Your edit was successful.</div>";
     }

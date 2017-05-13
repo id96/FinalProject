@@ -162,23 +162,8 @@ echo "<div class='container'>";
 </div> <!-- end of modal div -->
 <!-- end of DSLR section -->
 
-
-
-
-
-<?php
-		echo '<div class="video col-lg-12 col-md-10 col-sm-8">';
-			// display video walk thru
-				print('<h1>VIDEO WALK-THRU</h1>');
-				print("<div class='media'>");
-					echo '<iframe width="300" height="245" src="https://www.youtube.com/embed/BGz-CwtJP6Q" frameborder="0" allowfullscreen></iframe>';
-				print("</div>"); // end of media div
-		echo '</div>'; // end of video div 
-
-	echo '</div>'; //end of row table div
-
-echo '</div>'; //end of container div
-?>
+</div>
+</div>
 
 <?php include 'footer.php';?>
 
