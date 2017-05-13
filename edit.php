@@ -131,9 +131,9 @@
                         ?> 
                         <label>What type of photography?</label>
                         <br>
-                        <input class='button' type='radio' value='aerial'>Aerial
+                        <input class='button' type='radio' name='photo_type' value='Aerial'>Aerial
                         <br>
-                        <input class='button' type='radio' value='dslr'>DSLR
+                        <input class='button' type='radio' name='photo_type' value='DSLR'>DSLR
                         <br>
                         <input type="submit" name="submit_image" value="Click to submit">
                     </form>
@@ -160,9 +160,9 @@
                         <label>Delete which image?</label>
                         <br>
                         <?php
-                            $result = $mysqli -> query('SELECT * FROM Images');
+                            $result = $mysqli -> query('SELECT * FROM media');
                             while ($row = $result -> fetch_row()) {
-                                print "<input class='button' type='checkbox' name='media_select[]' value='$row[0]'>$row[1]<br>"; }
+                                print "<input class='button' type='checkbox' name='media_select[]' value='$row[0]'>$row[2]<br>"; }
                         ?> 
                         <br>
                         <input class="submit_button" type="submit" name="delete_image" value="Click to submit">
@@ -277,29 +277,35 @@
         $title = $_POST['name_photo'];
         $title = htmlentities($title);
         $filetype = pathinfo($original_name, PATHINFO_EXTENSION);
-        
+        $photo_description = $_POST['photo_description'];
+        $photo_description = htmlentities($photo_description);
+        $photo_type = $_POST['photo_type'];
+
         if($filetype!='jpg' && $filetype!='png' && $filetype!='jpeg' && $filetype!='gif'){
             echo "<div class='form'>The image was not uploaded successfully. The file type is not supported. Please upload images with the extension .jpg, .png, .jpeg, or .gif only.";
                 }
         elseif(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $title) !== 1) {
-            echo "<div class='form'>Please enter a valid Name of Photo.</div>";
+            echo "<div class='form'>Please enter a valid title.</div>";
+        }
+        elseif(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $photo_description) !== 1) {
+            echo "<div class='form'>Please enter a valid photo description.</div>";
         }
         else {
             move_uploaded_file($temp_name, "media/$original_name");
-            $sql = "INSERT INTO media(title, file_path) VALUES ('$title', 'media/$original_name')";
-            //var_dump($sql);
-            if ($mysqli -> query($sql)){
-                $image_id = $mysqli -> insert_id;
-                //var_dump($image_id);
-            }
-            if (isset($_POST['property_select'])) {
-                $image_id = $mysqli -> insert_id;
-                //var_dump($image_id);
-                $album_select = $_POST['property_select'];
-                foreach ($album_select as $item) {
-                $album_id = $mysqli -> query("INSERT INTO ImagesinAlbums(ImageID, AlbumID) VALUES ('$image_id', '$item')");
-                echo "<div class='response_add'>You have successfully added an image to the specified album(s)! Check the Display All page to see your image!</div>"; }
-            }
+            $sql = "INSERT INTO media(title, description, file_path, type_of_photography, date_taken) VALUES ('$title', '$photo_description', 'media/$original_name', '$photo_type', CURDATE() )";
+            var_dump($sql);
+            // if ($mysqli -> query($sql)){
+            //     $image_id = $mysqli -> insert_id;
+            //     //var_dump($image_id);
+            // }
+            // if (isset($_POST['property_select'])) {
+            //     $image_id = $mysqli -> insert_id;
+            //     //var_dump($image_id);
+            //     $album_select = $_POST['property_select'];
+            //     foreach ($album_select as $item) {
+            //     $album_id = $mysqli -> query("INSERT INTO ImagesinAlbums(ImageID, AlbumID) VALUES ('$image_id', '$item')");
+            //     echo "<div class='response_add'>You have successfully added an image to the specified album(s)! Check the Display All page to see your image!</div>"; }
+            // }
         }
     }
 
@@ -314,11 +320,11 @@
     }
 
     if(isset($_POST["delete_image"])) {
-        $result = $mysqli -> query('SELECT * FROM Images');
+        $result = $mysqli -> query('SELECT * FROM media');
         $result2 = $mysqli2 -> query('SELECT * FROM property');
         $edit_imageid = $_POST['album_select'];
         foreach ($edit_imageid as $item) {
-            $sql = "DELETE FROM Images WHERE ImageID = $item";
+            $sql = "DELETE FROM media WHERE mediaID = $item";
             $sql2 = "DELETE FROM ImagesinAlbums WHERE ImageID = $item";
             $result = $mysqli -> query($sql);
             $result2 = $mysqli2 -> query($sql2);
