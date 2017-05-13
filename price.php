@@ -23,13 +23,14 @@
 ?>
 
 <div class='main_wrapper_services'>
-	<h1>Pricing by Area</h1>
-	<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized Area, receive a $50 discount!*</p>
+	<h1 id='price_area'>Pricing by Area</h1>
+	<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized area, receive a $50 discount!*</p>
 
 
-	<!-- SUMMARY TABLE -->
 	<div class="container">
 		<div class="row table">
+			<!-- SUMMARY TABLE -->
+			<h3>PRICING SUMMARY</h3>
 		    <div class="plan col-lg-3 col-sm-6">
 		        <h3>0-1999 Sq. Ft</h3>       
 		        <ul>
@@ -69,47 +70,38 @@
 		            <b>TOTAL - </b><span>$550</span>, save $50!				
 		        </ul>
 		    </div>	
-		</div>
-	
-
-	<!-- END OF SUMMARY TABLE -->
-
-	<!-- PRICE GENERATOR -->
-
-		
-		<div class='price'>
-		<h1>PRICE GENERATOR</h1>
-			<div class = 'price_form'>
-				<form action="price.php" method="post">
-					<label>Property Area</label>
-						<select class="button" name="area" required>
-							<option value= "0-1999">0-1999 Sq. Ft</option>
-							<option value="2000-2999">2000-2999 Sq. Ft</option>
-							<option value="3000-4999">3000-4999 Sq. Ft</option>
-							<option value=">5000">>5000 Sq. Ft</option>
-						</select>
-					<br>
-					<label>What Services Would You Like?</label>
-					<br>
-					<input class='button' type='checkbox' name='Aerial'>
-					<label>Aerial Pictures</label>
-					<br>
-					<input class='button' type='checkbox' name='DSLR'>
-					<label>DSLR Photography</label>
-					<br>
-					<input class='button' type='checkbox' name='Video'>
-					<label>Video Walk Thru</label>
-					<br>
-					<input class="submit" type="submit" name='submit' value="submit">
-				</form>
+		    <!-- END OF SUMMARY TABLE -->
+		    <!-- PRICE GENERATOR -->
+		    <div class='plan col-lg-12 col-sm-12'>
+		    	<h3>PRICE GENERATOR</h1>
+		    	<div class='price_form'>
+				    <form action="price.php" method="post">
+						<label>What Services Would You Like?</label>
+						<br>
+						<input class='button' type='checkbox' name='Aerial'>
+						<label>Aerial Pictures</label>
+						<br>
+						<input class='button' type='checkbox' name='DSLR'>
+						<label>DSLR Photography</label>
+						<br>
+						<input class='button' type='checkbox' name='Video'>
+						<label>Video Walk Thru</label>
+						<br>
+						<label>Property Area</label>
+							<select class="button" name="area" required>
+								<option value= "0-1999">0-1999 Sq. Ft</option>
+								<option value="2000-2999">2000-2999 Sq. Ft</option>
+								<option value="3000-4999">3000-4999 Sq. Ft</option>
+								<option value=">5000">>5000 Sq. Ft</option>
+							</select>
+						<br>
+						<input class="submit" type="submit" name='submit' value="submit">
+					</form>
+				</div> <!-- end of price form div  -->
 			</div>
+			<!-- END OF PRICE GENERATOR -->
 		</div>
-	</div>
-
-	<!-- END OF PRICE GENERATOR -->
-
-	<?php
-
+<?php
 	if(isset($_POST['submit'])) {
 		$total = 0;
 		if(isset($_POST['area'])) {
@@ -174,7 +166,8 @@
 		echo "<div class='price'><p><span id='price_response'>Total = $$total</span></p></div>";
 	}
 	?>
-
+	</div>
+</div>
 
 	
 
