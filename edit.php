@@ -101,9 +101,9 @@
                         <br>
                         <input class="button" type="text" name="property_name" placeholder="Title here..." required/>
                         <br>
-                        <label>Property Description:</label>
+                        <label>Property Address:</label>
                         <br>
-                        <textarea rows="4" cols="40" name="prop_description" placeholder="Description here..." required></textarea>
+                        <textarea rows="4" cols="40" name="prop_address" placeholder="Description here..." required></textarea>
                         <br>
                         <input class="submit_button" type="submit" name="add_property" value="Click to submit">
                     </form>
@@ -249,12 +249,12 @@
     if(isset($_POST["add_property"])) {
     $property_name = $_POST["property_name"];
     $property_name = htmlentities($property_name);
-    $prop_description = $_POST["prop_description"];
-    $prop_description = htmlentities($prop_description);
-    if(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $property_name) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $prop_description) === 1) {
-        $sql = "INSERT INTO property(property_name, Description, date_created, date_modified) VALUES('$property_name', '$prop_description', CURDATE(), CURDATE())";
+    $prop_address = $_POST["prop_address"];
+    $prop_address = htmlentities($prop_address);
+    if(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $property_name) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $prop_address) === 1) {
+        $sql = "INSERT INTO property(property_name, address, date_modified) VALUES('$property_name', '$prop_address', CURDATE())";
         $result = $mysqli -> query($sql);
-        echo "<div class='response'><p>You have successfully added a property! Check the Display All page to see your property and description.</p></div>";
+        echo "<div class='response'><p>You have successfully added a property!</p></div>";
         }
     else {
     echo "<div class='form'>Please enter valid criteria.</div>";
