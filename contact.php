@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
     <title>East Coast Drones</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://use.fontawesome.com/252db8b05d.js"></script>
@@ -23,7 +23,8 @@
 ?>
 
 
-	<div>
+	<div class = 'main_wrapper_services'>
+		<!-- <h1>Contact</h1> -->
 		<div class= "contact-containter">
 			<h1 class="contact_head"> Get In Touch </h1>
 			<form action="contact.php" method="post" class='identification'>
@@ -43,7 +44,7 @@
 	 				<div class='response'>
 	 					<label>Your Message:</label>
 	 					<br>
-	 					<input type="text" name="message" placeholder="Hello! We would love to work with you on this project..." required class='field_element'>
+	 					<input class='message' type="text" name="message" placeholder="Hello! We would love to work with you on this project..." required class='field_element'>
 	 					<br>
 	 				</div>
                     

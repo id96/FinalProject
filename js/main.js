@@ -55,19 +55,19 @@ var navbarHeight = $('header').outerHeight();
 // on scroll, let the interval function know the user has scrolled
 $(window).scroll(function(event){
     didScroll = true;
-    console.log(didScroll);
+    //console.log(didScroll);
 });
 
 // run hasScrolled() and reset didScroll status
 setInterval(function() {
     if (didScroll) {
-        hasScrolled();
+        //hasScrolled();
         didScroll = false;
     }
 }, 250);
 
 function hasScrolled() {
-    console.log("function runs");
+    //console.log("function runs");
     var st = $(this).scrollTop();
     if (Math.abs(lastScrollTop - st) <= delta) {
         return;

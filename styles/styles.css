@@ -88,37 +88,50 @@ button {
   font-weight: 400; 
 }
 .content .content-text {
-  color: #666;
+  color: black;
+/*  #666*/
   font-size: 16px;
   text-align: center;
   padding-bottom: 100px;
 }
 
 .content-grey {
-  background: #222;
+  background: #efefef;
 }
 .content-grey .content-title {
   padding-bottom: 50px;
   padding-top: 100px; 
   text-align: center;
   font-size: 34px;
-  color: #ffffff;
+  color: black;
   font-weight: 400; 
 }
 .content-grey .content-text {
-  color: #ffffff;
+  color: black;
   font-size: 16px;
   text-align: center;
   padding-bottom: 100px;
 }
 
 .services {
-  background: #efefef;
+  background: #cccccc; 
+  color: #666;
+/*  #222*/
 }
+
+.services .services-text {
+  color: #ffffff;
+}
+
 .services-cell {
   padding: 3em;
   text-align: center;
   padding-bottom: 4em;
+}
+
+.mission {
+  font-size: 0.3em;
+  color: #ffffff;
 }
 
 /**********************/
@@ -169,7 +182,7 @@ button {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-#icon {
+.icon {
   font-size: 2em;
   padding: 1em;
 }
@@ -193,9 +206,6 @@ button {
     text-align: left;
 }
 
-.price_body {
-    text-align: center;
-}
 
 .discount {
   text-decoration: underline;
@@ -205,17 +215,27 @@ button {
 
 
 .price_form {
-  text-align: center;
+  /*text-align: center;*/
+  width: 25%;
+  margin: auto;
 }
 
 .price {
-  text-align: center;
+  /*text-align: center;*/
     border-right: solid grey 5px;
 	border-left: solid grey 5px;
 	border-top: solid grey 5px;
     border-bottom: solid grey 5px;
     width: 80%;
     margin-left: 10%;
+}
+
+.price h1{
+  text-align: center;
+}
+
+.price p {
+  text-align: center;
 }
 
 .price_head{
@@ -227,6 +247,11 @@ button {
   text-align: left;
 }
 
+#price_response {
+  text-align: center;
+  font-size: 2.75em;
+  text-decoration-style: bold italic underline;
+}
 /**********************/
 /* services page */
 /**********************/
@@ -240,9 +265,23 @@ button {
 	padding-top: 4%;
 	padding-bottom: 4%;
 }
-.service{
-	width: 30%;
-	font-family: 'Roboto', sans-serif;
+.videoWrapper {
+	position: relative;
+    min-height: 248px;
+
+}
+.videoWrapper iframe {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 77%;
+    padding-bottom: 2%;
+    margin-left: 12%;
+}
+.service {
+	/*float: left;*/
+    /*width: 33%;*/
+    font-family: 'Roboto', sans-serif;
     display: inline-block;
 	
 }
@@ -252,7 +291,8 @@ button {
 	margin-bottom: 0%;
 	padding-top: 2%;
 	padding-bottom: 2%;
-    background: rgba(68, 132, 206, .6)
+	font-size: 110%;
+  background: rgba(68, 132, 206, .6)
 }
 .service .description-container{
 	margin-left: 2%;
@@ -260,7 +300,8 @@ button {
 	padding-top: 4%; 
 	padding-bottom: 4%;
 }
-.service p{
+.service p {
+	position: relative;
 	text-align: left;
 	width:106%;
 	padding-left: 15%;
@@ -280,8 +321,6 @@ button {
     
 }
 
-
-
 /**********************/
 /* about page */
 /**********************/
@@ -291,6 +330,12 @@ button {
     padding-bottom: 20px;
 }
 
+.about_content {
+  background-color: #ffffff;
+  text-align: center;
+  overflow: auto;
+  font-size: 1.1em;
+}
 
 .bio {
   width: 206px;
@@ -299,19 +344,27 @@ button {
 }
 
 .leftcol_bren {
-  width: 48%;
+  /*width: 48%;*/
   display: inline-block;
   padding-left: 50px;
   padding-right: 50px;
   float: left;
+  background-color: #ffffff;
+  margin-top: 30px;
+  text-align: left;
+  margin-bottom: 50px;
 }
 
 .rightcol_jon {
-  width: 48%;
+  /*width: 48%;*/
   display: inline-block;
   padding-left: 50px;
   padding-right: 50px;
   float: right;
+  background-color: #ffffff;
+  margin-top: 30px;
+  text-align: left;
+  margin-bottom: 50px;
 }
 
 .image {
@@ -324,10 +377,14 @@ button {
     float: none;
 }
 
+.contact_info {
+  font-size: 1.25em;
+}
 
 /**********************/
 /* contact page */
 /**********************/
+
 
 .contact_head {
 	/*font-style: italic;*/
@@ -363,12 +420,16 @@ form .identification {
 	border-left: solid grey 5px;
 }
 
+form {
+   padding-bottom: 50px;
+}
+
 .form_info{
 	margin-left: 25%;
     margin-right: 25%;
     padding-left: 0%;
     padding-top: 3%;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
     line-height: 120%;
     float: none;
     width: auto;
@@ -391,11 +452,13 @@ form .identification {
   display: inline-block;
   width: auto;
   height: auto;
-  padding: 1em 2.5em;
+  padding: 1em 2em;
   border-width: 0;
   text-align: center;
   cursor: pointer;
   outline: none;
+  margin-bottom: 10px;
+  margin-top: 25px;
 }
 
 .submit :hover {
@@ -424,6 +487,21 @@ form .identification {
     border-radius: 2px;
 }
 
+.message {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0 4px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: normal;
+    box-sizing: border-box;
+    border-radius: 2px;
+    height: 100px;
+
+}
+
 /**********************/
 /* pricing table */
 /**********************/
@@ -449,11 +527,11 @@ form .identification {
 }
 .aerial {
   float: left;
-  width: 30%;
+  /*width: 30%;*/
 }
 .dslr, .video{ 
   float: left;
-  width: 30%;
+  /*width: 30%;*/
   margin-left: 5%;
 }
 
