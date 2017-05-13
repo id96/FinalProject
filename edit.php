@@ -37,73 +37,105 @@
         <div class="row table">
             <div class="main_wrapper_services">
                 <div class='plan col-lg-4 col-md-4 col-sm-8'>
-                	<div class="form_wrap">
-                        <div class="form">
-                        <h1>Edit Media</h1>
-                            <form action="edit.php" method="post">
-                                <label>Select Media</label>
-                                <br>
-                                <?php
-                                	// print out list of photos
-                                    $result = $mysqli -> query('SELECT * FROM media');
-                                    while ($row = $result -> fetch_row()) {
-                                        print "<input class='button' type='checkbox' name='media_select[]' value='$row[0]'>$row[2]<br>"; }
-                                ?> 
-                                <br>
-                                <label>Change Photo Name to...</label>
-                                <br>
-                                <input class="button" type="text" name="new_name" placeholder="Title here..."/>
-                                <br>
-                                <label>Change Photo Description to...</label>
-                                <br>
-                                <textarea rows="4" cols="40" name="new_description" placeholder="Add a description..."></textarea>
-                                <br>
-                                <label>Add selected media to which property? </label>
-                                <br>
-                                <br>
-                                <?php
-                                    $result = $mysqli -> query('SELECT * FROM property');
-                                    while ($row = $result -> fetch_row()) {
-                                        print "<input class='button' type='radio' name='add_to_property' value='$row[0]'>$row[1]<br>"; }
-                                ?> 
-                                <br>
-                                <input class="submit_button" type="submit" name="edit_media" value="Click to submit">
-                            </form>
-                    </div>
+                    <h3 class='price_generator'>Edit Media</h3>
+                    <form class='price_generator' action="edit.php" method="post">
+                        <label>Select Media</label>
+                        <br>
+                        <?php
+                        	// print out list of photos
+                            $result = $mysqli -> query('SELECT * FROM media');
+                            while ($row = $result -> fetch_row()) {
+                                print "<input class='button' type='checkbox' name='media_select[]' value='$row[0]'>$row[2]<br>"; }
+                        ?> 
+                        <br>
+                        <label>Change Photo Name to...</label>
+                        <br>
+                        <input class="button" type="text" name="new_name" placeholder="Title here..."/>
+                        <br>
+                        <label>Change Photo Description to...</label>
+                        <br>
+                        <textarea rows="4" cols="40" name="new_description" placeholder="Add a description..."></textarea>
+                        <br>
+                        <label>Add selected media to which property? </label>
+                        <br>
+                        <br>
+                        <?php
+                            $result = $mysqli -> query('SELECT * FROM property');
+                            while ($row = $result -> fetch_row()) {
+                                print "<input class='button' type='radio' name='add_to_property' value='$row[0]'>$row[1]<br>"; }
+                        ?> 
+                        <br>
+                        <input class="submit_button" type="submit" name="edit_media" value="Click to submit">
+                    </form>
                 </div>
 
                 <div class='plan col-lg-4 col-md-4 col-sm-8'>
-                    <div class="form_wrap">
-                        <div class="form">
-                        <h1>Edit Property</h1>
-                            <form action="edit.php" method="post">
-                                <label>Select Property</label>
-                                <br>
-                                <?php
-                                	// print out list of property names
-                                    $result = $mysqli -> query('SELECT * FROM property');
-                                    while ($row = $result -> fetch_row()) {
-                                        print "<input class='button' type='checkbox' name='property_select' value='$row[0]'>$row[1]<br>"; }
-                                ?> 
-                                <br>
-                                <label>Change Property Name to...</label>
-                                <br>
-                                <input class="button" type="text" name="new_name" placeholder="Title here..."/>
-                                <br>
-                                <label>Change Property Address to...</label>
-                                <br>
-                                <textarea rows="4" cols="40" name="new_address" placeholder="Add a description..."></textarea>
-                                <br>
-                                <br>
-                                <input class="submit_button" type="submit" name="edit_property" value="Click to submit">
-                            </form>
-                    </div>
-                </div>
-            </div>
-        </div>    
-    </div>
-<?php
+                    <h3 class='price_generator'>Edit Property</h3>
+                    <form class='price_generator' action="edit.php" method="post">
+                        <label>Select Property</label>
+                        <br>
+                        <?php
+                        	// print out list of property names
+                            $result = $mysqli -> query('SELECT * FROM property');
+                            while ($row = $result -> fetch_row()) {
+                                print "<input class='button' type='checkbox' name='property_select' value='$row[0]'>$row[1]<br>"; }
+                        ?> 
+                        <br>
+                        <label>Change Property Name to...</label>
+                        <br>
+                        <input class="button" type="text" name="new_name" placeholder="Title here..."/>
+                        <br>
+                        <label>Change Property Address to...</label>
+                        <br>
+                        <textarea rows="4" cols="40" name="new_address" placeholder="Address here..."></textarea>
+                        <br>
+                        <br>
+                        <input class="submit_button" type="submit" name="edit_property" value="Click to submit">
+                    </form>
+                </div> <!-- end of plan div --> 
 
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
+                    <h3 class='price_generator'>Add Property</h3>
+                    <form class='price_generator' action="edit.php" method="post">
+                        <label>Property Name:</label>
+                        <br>
+                        <input class="button" type="text" name="property_name" placeholder="Title here..." required/>
+                        <br>
+                        <label>Property Description:</label>
+                        <br>
+                        <textarea rows="4" cols="40" name="prop_description" placeholder="Description here..." required></textarea>
+                        <br>
+                        <input class="submit_button" type="submit" name="add_property" value="Click to submit">
+                    </form>
+                </div>
+
+                <div class='plan col-lg-4 col-md-4 col-sm-8'>
+                    <h3 class='price_generator'>Add an image to a property</h3>
+                    <form class='price_generator' method="post" enctype="multipart/form-data">
+                        <label>Upload Photo:</label>
+                        <br>
+                        <input type="file" name="newphoto"/>
+                        <br>
+                        <label>Name of Photo:</label>
+                        <br>
+                        <textarea rows="1" cols="40" name="name_photo" placeholder="Title name here..." required></textarea>
+                        <br>
+                        <label>Add to which property?</label>
+                        <br>
+                        <br>
+                        <?php
+                            $result = $mysqli -> query('SELECT * FROM property');
+                            while ($row = $result -> fetch_row()) {
+                                print "<input class='button' type='checkbox' name='property_select' value='$row[0]'>$row[1]<br>"; }
+                        ?> 
+                        <input type="submit" name="submit_image" value="Click to submit">
+                    </form>
+                </div>
+            </div>    <!-- end of main wrapper div  -->
+        </div> <!-- end of row table div  -->
+    </div> <!-- end of container div -->
+
+<?php
 // editing media table
     if(isset($_POST['edit_media'])) {
         $result = $mysqli -> query('SELECT * FROM media');
@@ -182,6 +214,56 @@
             echo "<div class='response_add'>Please enter valid criteria to edit property.</div>";
         }
     }
+
+    if(isset($_POST["add_property"])) {
+    $property_name = $_POST["property_name"];
+    $property_name = htmlentities($property_name);
+    $prop_description = $_POST["prop_description"];
+    $prop_description = htmlentities($prop_description);
+    if(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $property_name) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $prop_description) === 1) {
+        $sql = "INSERT INTO property(property_name, Description, date_created, date_modified) VALUES('$property_name', '$prop_description', CURDATE(), CURDATE())";
+        $result = $mysqli -> query($sql);
+        echo "<div class='response'><p>You have successfully added a property! Check the Display All page to see your property and description.</p></div>";
+        }
+    else {
+    echo "<div class='form'>Please enter valid criteria.</div>";
+        }
+    }
+
+    if(isset($_POST["submit_image"])) {
+        $image = $_FILES["newphoto"];
+        $temp_name = $image['tmp_name'];
+        $temp_name = htmlentities($temp_name);
+        $original_name = $image['name'];
+        $original_name = htmlentities($original_name);
+        $title = $_POST['name_photo'];
+        $title = htmlentities($title);
+        $filetype = pathinfo($original_name, PATHINFO_EXTENSION);
+        if($filetype!='jpg' && $filetype!='png' && $filetype!='jpeg' && $filetype!='gif'){
+            echo "<div class='form'>The image was not uploaded successfully. The file type is not supported. Please upload images with the extension .jpg, .png, .jpeg, or .gif only.";
+                }
+        elseif(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $title) !== 1) {
+            echo "<div class='form'>Please enter a valid Name of Photo.</div>";
+        }
+        else {
+            move_uploaded_file($temp_name, "media/$original_name");
+            $sql = "INSERT INTO Images(PaintingTitle, file_path) VALUES ('$title', 'media/$original_name')";
+            //var_dump($sql);
+            if ($mysqli -> query($sql)){
+                $image_id = $mysqli -> insert_id;
+                //var_dump($image_id);
+            }
+            if (isset($_POST['property_select'])) {
+                $image_id = $mysqli -> insert_id;
+                //var_dump($image_id);
+                $album_select = $_POST['property_select'];
+                foreach ($album_select as $item) {
+                $album_id = $mysqli -> query("INSERT INTO ImagesinAlbums(ImageID, AlbumID) VALUES ('$image_id', '$item')");
+                echo "<div class='response_add'>You have successfully added an image to the specified album(s)! Check the Display All page to see your image!</div>"; }
+            }
+        }
+    }
+
 ?>
 
 <?php 
