@@ -113,21 +113,28 @@
                     <h3 class='price_generator'>Add an image to a property</h3>
                     <form class='price_generator' method="post" enctype="multipart/form-data">
                         <label>Upload Photo:</label>
-                        <br>
                         <input type="file" name="newphoto"/>
-                        <br>
                         <label>Name of Photo:</label>
                         <br>
                         <textarea rows="1" cols="40" name="name_photo" placeholder="Title name here..." required></textarea>
                         <br>
-                        <label>Add to which property?</label>
+                        <label>Photo Description:</label>
                         <br>
+                        <textarea rows="1" cols="40" name="photo_description" placeholder="Description here..." required></textarea>
+                        <br>
+                        <label>Add to which property?</label>
                         <br>
                         <?php
                             $result = $mysqli -> query('SELECT * FROM property');
                             while ($row = $result -> fetch_row()) {
                                 print "<input class='button' type='checkbox' name='property_select' value='$row[0]'>$row[1]<br>"; }
                         ?> 
+                        <label>What type of photography?</label>
+                        <br>
+                        <input class='button' type='radio' value='aerial'>Aerial
+                        <br>
+                        <input class='button' type='radio' value='dslr'>DSLR
+                        <br>
                         <input type="submit" name="submit_image" value="Click to submit">
                     </form>
                 </div> <!-- end of plan div  -->
@@ -270,6 +277,7 @@
         $title = $_POST['name_photo'];
         $title = htmlentities($title);
         $filetype = pathinfo($original_name, PATHINFO_EXTENSION);
+        
         if($filetype!='jpg' && $filetype!='png' && $filetype!='jpeg' && $filetype!='gif'){
             echo "<div class='form'>The image was not uploaded successfully. The file type is not supported. Please upload images with the extension .jpg, .png, .jpeg, or .gif only.";
                 }
@@ -278,7 +286,7 @@
         }
         else {
             move_uploaded_file($temp_name, "media/$original_name");
-            $sql = "INSERT INTO Images(PaintingTitle, file_path) VALUES ('$title', 'media/$original_name')";
+            $sql = "INSERT INTO media(title, file_path) VALUES ('$title', 'media/$original_name')";
             //var_dump($sql);
             if ($mysqli -> query($sql)){
                 $image_id = $mysqli -> insert_id;
