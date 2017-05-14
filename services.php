@@ -12,6 +12,7 @@
 		<script src="https://use.fontawesome.com/252db8b05d.js"></script>
 		<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
 		<script type="text/javascript" src="js/main.js"></script>
+		<script src="js/parallax.min.js"></script>
 	</head>
 <body>
 
@@ -78,11 +79,32 @@
 		                </div>
 					</div> <!-- end of service div  -->
 				</div> <!-- end of plan div -->
+
+				<div class='plan col-lg-8 col-md-8 col-sm-12'>
+					<iframe src="https://player.vimeo.com/video/185839002" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+
+				<div class='plan col-lg-8 col-md-8 col-sm-12'>
+					<iframe src="https://player.vimeo.com/video/180075346" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+
+				<div class='plan col-lg-8 col-md-8 col-sm-12'>
+					<iframe width="640" height="360" src="https://www.youtube.com/embed/Tz1EYi9JV5I" frameborder="0" allowfullscreen></iframe>
+				</div>
 			</div> <!-- end of container all services div -->
 		</div> <!-- end of row table div -->
 	</div> <!-- end of container div  -->
 </div>
+	
 
+    
+<!--
+	<div class='video'>
+		<div>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/BGz-CwtJP6Q" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+-->
 	<?php 
 		include 'footer.php';
 	?>
