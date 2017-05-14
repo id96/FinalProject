@@ -216,10 +216,20 @@ button {
   padding-bottom: 2%;
 }*/
 
-#generator {
-    float: right;
-    width: 40%;
+#largetables {
+    border-right: solid grey 5px;
+	border-left: solid grey 5px;
+	border-top: solid grey 5px;
+    border-bottom: solid grey 5px; 
 }
+
+#generator {
+     border-right: solid grey 5px;
+	border-left: solid grey 5px;
+	border-top: solid grey 5px;
+    border-bottom: solid grey 5px;
+}
+
 
 .discount {
   text-decoration: underline;
@@ -229,6 +239,7 @@ button {
 
 #discount {
     text-align: center;
+    border: 3px solid grey;
 }
 
 .price_form {
@@ -249,6 +260,14 @@ button {
   text-align: center;
   font-size: 2.75em;
   text-decoration-style: bold italic underline;
+}
+
+#smalltables {
+    border: solid grey 3px;
+    border-right: solid grey 3px;
+	border-left: solid grey 3px;
+	border-top: solid grey 3px;
+    border-bottom: solid grey 3px;
 }
 /**********************/
 /* services page */
