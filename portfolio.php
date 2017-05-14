@@ -9,9 +9,8 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/252db8b05d.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
+	  <link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
     <script type="text/javascript" src="js/main.js"></script>
-    <script src="js/parallax.min.js"></script>
 </head>
 
 <?php
@@ -48,7 +47,7 @@ echo "<div class='container'>";
 	 <?php
 	 	// get photos from DB
 	 	$aerial = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Aerial'");
-	    $i = 0;
+	    $i = 1;
 	    while ($row = $aerial->fetch_assoc()){
 	      $media_id = $row['mediaID'];
 	      $property_id = $row['propertyID'];
@@ -59,7 +58,7 @@ echo "<div class='container'>";
 	  
 	      print("<div class='media col-xs-12 col-sm-12 col-md-3 col-lg-3'>");
 
-	        echo "<img src='$file' style='width:100%' onclick='openModal();currentSlide($i)' class='cursor'>";
+	        echo "<img src='$file' style='width:100%' onclick='openModal();currentSlide($i)' class='cursor small-image'>";
 
 	      print("</div>"); //end of media div
 
@@ -111,7 +110,7 @@ echo "<div class='container'>";
 	 <?php
 	 	// get photos from DB
 	 	$dslr = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'DSLR'");
-	    $j = 0;
+	    $j = 1;
 	    while ($row = $dslr->fetch_assoc()){
 	      $media_id = $row['mediaID'];
 	      $property_id = $row['propertyID'];
@@ -169,7 +168,7 @@ echo "<div class='container'>";
 	 <?php
 	 	// get Survey photos from DB
 	 	$landSurvey = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Land Surveying'");
-	    $k = 0;
+	    $k = 1;
 	    while ($row = $landSurvey->fetch_assoc()){
 	      $media_id = $row['mediaID'];
 	      $property_id = $row['propertyID'];

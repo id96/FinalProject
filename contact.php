@@ -12,7 +12,6 @@
     <script src="https://use.fontawesome.com/252db8b05d.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
     <script type="text/javascript" src="js/main.js"></script>
-    <script src="js/parallax.min.js"></script>
 </head>
 <body>
 

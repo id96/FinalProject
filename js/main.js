@@ -1,9 +1,7 @@
 // Home Page Slideshow
-if (top.location.pathname === '/index.php'){
-    showSlides();
-}
+showSlidesHome();
 
-function showSlides() {
+function showSlidesHome() {
     function Slideshow( element ) {
         this.el = document.querySelector( element );
         this.init();
@@ -91,17 +89,14 @@ function hasScrolled() {
 }
 
 
-// image resizing
+// image resizing for Portfolio page
 $(window).load(function() {
-    $('.small-img').each(function() {
-        var imgClass = (this.width / this.height > 1) ? 'wide' : 'tall';
-        $(this).addClass(imgClass);
-    })
+  $('.small-img').each(function() {
+      var imgClass = (this.width / this.height > 1) ? 'wide' : 'tall';
+      $(this).addClass(imgClass);
+  })
 })
 
-$('.small-img').click(function on() {
-    document.getElementById("overlay").style.display = "block";
-});
 
 
 // overlay effect for aerial portfolio

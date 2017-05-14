@@ -13,7 +13,6 @@
     <script src="https://use.fontawesome.com/252db8b05d.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
     <script type="text/javascript" src="js/main.js"></script>
-    <script src="js/parallax.min.js"></script>
 </head>
 
 <?php 
@@ -112,13 +111,15 @@
                         <?php
                             $result = $mysqli -> query('SELECT * FROM property');
                             while ($row = $result -> fetch_row()) {
-                                print "<input class='button' type='checkbox' name='property_select' value='$row[0]'>$row[1]<br>"; }
+                                print "<input class='button' type='radio' name='media_into_prop' value='$row[0]'>$row[1]<br>"; }
                         ?> 
                         <label>What type of photography?</label>
                         <br>
                         <input class='button' type='radio' name='photo_type' value='Aerial'>Aerial
                         <br>
                         <input class='button' type='radio' name='photo_type' value='DSLR'>DSLR
+                        <br>
+                        <input class='button' type='radio' name='photo_type' value='Land Surveying'>Land Surveying
                         <br>
                         <input type="submit" name="submit_image" value="Click to submit">
                     </form>
@@ -187,7 +188,7 @@
         $new_description = htmlentities($new_description);
 
         // edit title and edit desciptions
-        if(preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,100}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $new_description) === 1) {
+        if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_description) === 1) {
             foreach ($edit_mediaid as $item) {
                 if(!empty($new_name) && !empty($new_description)) {
                     $sql = "UPDATE media SET title = '$new_name', description = '$new_description' WHERE mediaID = $item";
@@ -234,7 +235,7 @@
         $new_address = htmlentities($new_address);
 
         // edit title and edit desciptions
-        if(preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,100}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $new_address) === 1) {
+        if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_address) === 1) {
             
             if(!empty($new_name) && !empty($new_address)) {
                 $sql = "UPDATE property SET property_name = '$new_name', address = '$new_address' WHERE propertyID = $edit_propertyid";
@@ -261,14 +262,17 @@
     $property_name = htmlentities($property_name);
     $prop_address = $_POST["prop_address"];
     $prop_address = htmlentities($prop_address);
-    if(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $property_name) === 1 && preg_match("/^[A-Za-z 0-9!:@#$%^&*_()]{0,200}$/", $prop_address) === 1) {
-        $sql = "INSERT INTO property(property_name, address, date_modified) VALUES('$property_name', '$prop_address', CURDATE())";
-        $result = $mysqli -> query($sql);
-        echo "<div class='response'><p>You have successfully added a property!</p></div>";
+    if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $property_name) === 1) {
+        if (preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $prop_address) === 1) {
+            $sql = "INSERT INTO property(property_name, address, date_modified) VALUES('$property_name', '$prop_address', CURDATE())";
+            $result = $mysqli -> query($sql);
+            echo "<div class='response'><p>You have successfully added a property!</p></div>"; }
+        else {
+            echo "<div class='form'>Please enter valid address.</div>";
         }
+    }
     else {
-    echo "<div class='form'>Please enter valid criteria.</div>";
-        }
+        echo "<div class='form'>Please enter valid name.</div>"; }
     }
 
     if(isset($_POST["submit_image"])) {
@@ -283,6 +287,7 @@
         $photo_description = $_POST['photo_description'];
         $photo_description = htmlentities($photo_description);
         $photo_type = $_POST['photo_type'];
+        $propertyID = isset($_POST['media_into_prop']) ? $_POST['media_into_prop'] : NULL;
 
         if($filetype!='jpg' && $filetype!='png' && $filetype!='jpeg' && $filetype!='gif'){
             echo "<div class='form'>The image was not uploaded successfully. The file type is not supported. Please upload images with the extension .jpg, .png, .jpeg, or .gif only.";
@@ -295,8 +300,14 @@
         }
         else {
             move_uploaded_file($temp_name, "media/$original_name");
-            $sql = "INSERT INTO media(title, description, file_path, type_of_photography, date_taken) VALUES ('$title', '$photo_description', 'media/$original_name', '$photo_type', CURDATE() )";
-            var_dump($sql);
+
+            if ($propertyID == NULL) {
+                $sql = "INSERT INTO media(title, description, file_path, type_of_photography, date_taken) VALUES ('$title', '$photo_description', 'media/$original_name', '$photo_type', CURDATE() )";
+            } else {
+                $sql = "INSERT INTO media(propertyID, title, description, file_path, type_of_photography, date_taken) VALUES ($propertyID,'$title', '$photo_description', 'media/$original_name', '$photo_type', CURDATE() )";
+            }
+            
+            //var_dump($sql);
             if ($mysqli -> query($sql)){
                 $image_id = $mysqli -> insert_id;
                 //var_dump($image_id);
