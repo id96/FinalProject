@@ -189,7 +189,7 @@
         $new_description = htmlentities($new_description);
 
         // edit title and edit desciptions
-        if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_description) === 1) {
+        if(preg_match("/^[A-Za-z 0-9!:, \s@#$%^&*_()]{0,400}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:, \s@#$%^&*_()]{0,400}$/", $new_description) === 1) {
             foreach ($edit_mediaid as $item) {
                 if(!empty($new_name) && !empty($new_description)) {
                     $sql = "UPDATE media SET title = '$new_name', description = '$new_description' WHERE mediaID = $item";
@@ -236,7 +236,7 @@
         $new_address = htmlentities($new_address);
 
         // edit title and edit desciptions
-        if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_address) === 1) {
+        if(preg_match("/^[A-Za-z 0-9!:, \s@#$%^&*_()]{0,400}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:, \s@#$%^&*_()]{0,400}$/", $new_address) === 1) {
             
             if(!empty($new_name) && !empty($new_address)) {
                 $sql = "UPDATE property SET property_name = '$new_name', address = '$new_address' WHERE propertyID = $edit_propertyid";
@@ -263,8 +263,8 @@
     $property_name = htmlentities($property_name);
     $prop_address = $_POST["prop_address"];
     $prop_address = htmlentities($prop_address);
-    if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $property_name) === 1) {
-        if (preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $prop_address) === 1) {
+    if(preg_match("/^[A-Za-z 0-9!:, \s@#$%^&*_()]{0,400}$/", $property_name) === 1) {
+        if (preg_match("/^[A-Za-z 0-9!:, \s@#$%^&*_()]{0,400}$/", $prop_address) === 1) {
             $sql = "INSERT INTO property(property_name, address, date_modified) VALUES('$property_name', '$prop_address', CURDATE())";
             $result = $mysqli -> query($sql);
             echo "<div class='response'><p>You have successfully added a property!</p></div>"; }
@@ -292,10 +292,10 @@
         if($filetype!='jpg' && $filetype!='png' && $filetype!='jpeg' && $filetype!='gif'){
             echo "<div class='form'>The image was not uploaded successfully. The file type is not supported. Please upload images with the extension .jpg, .png, .jpeg, or .gif only.";
                 }
-        elseif(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $title) !== 1) {
+        elseif(preg_match("/^[A-Za-z 0-9!:, \s@#$%^&*_()]{0,100}$/", $title) !== 1) {
             echo "<div class='form'>Please enter a valid title.</div>";
         }
-        elseif(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $photo_description) !== 1) {
+        elseif(preg_match("/^[A-Za-z 0-9!:, \s@#$%^&*_()]{0,100}$/", $photo_description) !== 1) {
             echo "<div class='form'>Please enter a valid photo description.</div>";
         }
         else {

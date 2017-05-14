@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <script src="https://use.fontawesome.com/252db8b05d.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
     <script type="text/javascript" src="js/main.js"></script>
@@ -161,6 +160,64 @@ echo "<div class='container'>";
   </div> <!-- end of modal content -->
 </div> <!-- end of modal div -->
 <!-- end of DSLR section -->
+
+
+
+<!-- START Land Surveying PORTFOLIO -->
+<div class="dslr col-lg-12 col-md-12 col-sm-8">
+	<h1>LAND SURVEYING</h1>
+	 <?php
+	 	// get Survey photos from DB
+	 	$landSurvey = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Land Surveying'");
+	    $k = 0;
+	    while ($row = $landSurvey->fetch_assoc()){
+	      $media_id = $row['mediaID'];
+	      $property_id = $row['propertyID'];
+	      $title = $row['title'];
+	      $description = $row['description'];
+	      $file = $row['file_path'];
+	      $type = $row['type_of_photography'];
+	  
+	      print("<div class='media col-xs-12 col-sm-12 col-md-3 col-lg-3'>");
+
+	        echo "<img src='$file' style='width:100%' onclick='openModalSurvey(); currentSlideSurvey($k)' class='cursor'>";
+
+	      print("</div>"); //end of media div
+	      $k++;
+	    }
+	?>
+</div>
+
+<div id="myModal-survey" class="modal">
+  <span class="close cursor" onclick="closeModalSurvey()">&times;</span>
+  <div class="modal-content">
+  <?php 
+  	// get photos from DB for overlay effect
+  	$landSurvey = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Land Surveying'");
+    
+    while ($row = $landSurvey->fetch_assoc()){
+      $media_id = $row['mediaID'];
+      $property_id = $row['propertyID'];
+      $title = $row['title'];
+      $description = $row['description'];
+      $type = $row['type_of_photography'];
+      $file = $row['file_path'];
+
+      echo "<div class='mySlides-survey'>";
+        echo "<img src='$file' style='max-height:75vh' class='center-block'>"; 
+        echo "<p>$title</p>";
+        echo "<p>$description</p>";
+      echo "</div>"; //end of myslides Survey
+
+    }
+  ?>  
+  <!-- buttons -->
+  <a class="prev" onclick='plusSlidesSurvey(-1)'>&#10094;</a>
+  <a class="next" onclick="plusSlidesSurvey(1)">&#10095;</a>
+
+  </div> <!-- end of modal content -->
+</div> <!-- end of modal div -->
+<!-- end of Land Surveying section -->
 
 </div>
 </div>
