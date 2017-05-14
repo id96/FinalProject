@@ -83,16 +83,7 @@
 		</div> <!-- end of row table div -->
 	</div> <!-- end of container div  -->
 </div>
-	
 
-    
-<!--
-	<div class='video'>
-		<div>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/BGz-CwtJP6Q" frameborder="0" allowfullscreen></iframe>
-		</div>
-	</div>
--->
 	<?php 
 		include 'footer.php';
 	?>
