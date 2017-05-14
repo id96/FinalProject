@@ -34,6 +34,10 @@ header {
   	top: -55px;
 }
 
+button {
+    display: none;
+}
+
 /**********************/
 /* login */
 /**********************/
@@ -200,6 +204,11 @@ header {
 	border-top: solid grey 5px;
     border-bottom: solid grey 5px;
     text-align: left;
+    float: left;
+}
+
+.row table {
+    width: 40%;
 }
 
 /*#price_area {
@@ -207,10 +216,19 @@ header {
   padding-bottom: 2%;
 }*/
 
+#generator {
+    float: right;
+    width: 40%;
+}
+
 .discount {
   text-decoration: underline;
   font-weight: bolder;
   font-style: italic;
+}
+
+#discount {
+    text-align: center;
 }
 
 .price_form {
@@ -457,7 +475,10 @@ form .identification {
   margin-left: 25px;
   margin-right: 25px;
 }
-
+.bot_checker{
+	visibility: hidden;
+	display: none;
+}
 .field_element {
     width: 100%;
     padding: 12px;

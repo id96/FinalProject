@@ -23,7 +23,6 @@
 
 <div class='main_wrapper_services'>
 	<h1 id='price_area'>Pricing by Area</h1>
-	<p>*If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized area, receive a $50 discount!*</p>
 
 
 	<div class="container">
@@ -69,9 +68,14 @@
 		            <b>TOTAL - </b><span>$550</span>, save $50!				
 		        </ul>
 		    </div>	
+            <div id="discount">
+                	<p>If you purchase a Total Package (Aerial Pictures, DSLR Photography, and Video Walk Thru) for any sized area, receive a $50 discount!</p>
+
+            </div>
 		    <!-- END OF SUMMARY TABLE -->
+        </div>
 		    <!-- PRICE GENERATOR -->
-		    <div class='plan col-lg-12 col-sm-12'>
+		    <div class='plan col-lg-12 col-sm-12' id="generator">
 		    	<h3>PRICE GENERATOR</h1>
 		    	<div class='price_form'>
 				    <form action="price.php" method="post">
@@ -99,7 +103,7 @@
 				</div> <!-- end of price form div  -->
 			</div>
 			<!-- END OF PRICE GENERATOR -->
-		</div>
+		
 <?php
 	if(isset($_POST['submit'])) {
 		$total = 0;

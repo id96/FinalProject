@@ -26,7 +26,7 @@
 		<!-- <h1>Contact</h1> -->
 		<div class= "contact-containter">
 			<h1 class="contact_head"> Get In Touch </h1>
-			<form action="contact.php" method="post" class='identification'>
+			<form action="contact.php" method="POST" class='identification'>
  				<div class='form_info'>
  					<div class='response'>
 	 					<label>Your Name:</label>
@@ -45,6 +45,10 @@
 	 					<br>
 	 					<input class='message' type="text" name="message" placeholder="Hello! We would love to work with you on this project..." required class='field_element'>
 	 					<br>
+	 					<?php
+	 						echo '<input class="bot_checker" type="checkbox" name="bot_checker" value="caught">';
+	 					
+	 					?>
 	 				</div>
                     
                     <!--Upon successful implementation, the submit button will email the owners. However, we do not want to bug them right now as we are in development. -->
@@ -52,6 +56,34 @@
 		 				<input type="submit" name="submit" value="submit" class='submit'> 
 		 				<!-- idea modified from Squarespace -->
  					</div>
+ 					<?php
+						if (isset($_POST['submit'])) {
+							if (isset($_POST["bot_checker"])){
+								echo '<p style="color:red;">Please do not spam us.</p>';
+							}
+							else if (empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["message"])) {
+								echo '<p style="color:red;">Please fill out all fields.</p>';
+							}
+							else {
+								// Remove all illegal characters from contact fields
+								$name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+								$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+								$message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
+
+								// Validate e-mail
+								if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+   									 echo'<p style="color:red;">Supplied email is not a valid email address.</p>';
+								}
+								else {
+									$headers = "From: $name \r\n"."Reply-To: $email \r\n";
+									$message = $message."\n\n This message was sent by $name from the website.";
+									mail("visellib@bc.edu,jjparece@loyola.edu","East Coast Drones Customer: $name",$message, $headers);
+								}
+								
+							}
+						}
+
+					?>
  				</div>
   			</form>
   		</div>

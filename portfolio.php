@@ -168,7 +168,11 @@ echo "<div class='container'>";
 	 <?php
 	 	// get Survey photos from DB
 	 	$landSurvey = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Land Surveying'");
+<<<<<<< HEAD
 	    $k = 1;
+=======
+	    $k = 0;
+>>>>>>> 65ce5a48311c49d695a0b7da4761e3bee71db7c3
 	    while ($row = $landSurvey->fetch_assoc()){
 	      $media_id = $row['mediaID'];
 	      $property_id = $row['propertyID'];
