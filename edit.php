@@ -189,7 +189,7 @@
         $new_description = htmlentities($new_description);
 
         // edit title and edit desciptions
-        if(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,200}$/", $new_description) === 1) {
+        if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_description) === 1) {
             foreach ($edit_mediaid as $item) {
                 if(!empty($new_name) && !empty($new_description)) {
                     $sql = "UPDATE media SET title = '$new_name', description = '$new_description' WHERE mediaID = $item";
@@ -236,7 +236,7 @@
         $new_address = htmlentities($new_address);
 
         // edit title and edit desciptions
-        if(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,200}$/", $new_address) === 1) {
+        if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_name) === 1 && preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $new_address) === 1) {
             
             if(!empty($new_name) && !empty($new_address)) {
                 $sql = "UPDATE property SET property_name = '$new_name', address = '$new_address' WHERE propertyID = $edit_propertyid";
@@ -263,14 +263,17 @@
     $property_name = htmlentities($property_name);
     $prop_address = $_POST["prop_address"];
     $prop_address = htmlentities($prop_address);
-    if(preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,100}$/", $property_name) === 1 && preg_match("/^[A-Za-z 0-9!:,@#$%^&*_()]{0,200}$/", $prop_address) === 1) {
-        $sql = "INSERT INTO property(property_name, address, date_modified) VALUES('$property_name', '$prop_address', CURDATE())";
-        $result = $mysqli -> query($sql);
-        echo "<div class='response'><p>You have successfully added a property!</p></div>";
+    if(preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $property_name) === 1) {
+        if (preg_match("/^[A-Za-z 0-9!:, @#$%^&*_()]{0,400}$/", $prop_address) === 1) {
+            $sql = "INSERT INTO property(property_name, address, date_modified) VALUES('$property_name', '$prop_address', CURDATE())";
+            $result = $mysqli -> query($sql);
+            echo "<div class='response'><p>You have successfully added a property!</p></div>"; }
+        else {
+            echo "<div class='form'>Please enter valid address.</div>";
         }
+    }
     else {
-    echo "<div class='form'>Please enter valid criteria.</div>";
-        }
+        echo "<div class='form'>Please enter valid name.</div>"; }
     }
 
     if(isset($_POST["submit_image"])) {
