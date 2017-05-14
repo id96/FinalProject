@@ -95,8 +95,8 @@
 		if (isset($_SESSION['logged_user_by_sql'])) {
 			echo "<div class='welcome'>";
 				echo "<p>Welcome, $db_username.<br>You can now edit photos!<p>
-						<p>Go to the <a href='edit.php'>edit page</a>. </p>
-						<p>The Edit Database link will now be present in the footer next to the Admin Link until you log out.<p>";
+						<p>The Edit Database link will now be present in the footer next to the Admin Link until you log out.<p>
+						<p>Go to the <a href='edit.php'>edit page</a>. </p>";
 			echo "</div>";
 		} else {
 			echo "<div class='welcome'>";

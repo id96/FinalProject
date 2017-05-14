@@ -206,6 +206,10 @@ button {
     text-align: left;
 }
 
+#price_area {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
 
 .discount {
   text-decoration: underline;
@@ -213,30 +217,10 @@ button {
   font-style: italic;
 }
 
-
 .price_form {
-  /*text-align: center;*/
-  width: 25%;
-  margin: auto;
-}
-
-.price {
-  /*text-align: center;*/
-    border-right: solid grey 5px;
-	border-left: solid grey 5px;
-	border-top: solid grey 5px;
-    border-bottom: solid grey 5px;
-    width: 80%;
-    margin-left: 10%;
-}
-
-.price h1{
   text-align: center;
 }
 
-.price p {
-  text-align: center;
-}
 
 .price_head{
   font-family: 'Roboto', sans-serif;
@@ -262,8 +246,8 @@ button {
 }
 .main_wrapper_services h1 {
 	text-align: center;
-	padding-top: 4%;
-	padding-bottom: 4%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }
 .videoWrapper {
 	position: relative;
@@ -399,7 +383,7 @@ button {
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
 } 
-}
+
 
 .contact-container{
 	width:50%;
@@ -420,9 +404,13 @@ form .identification {
 	border-left: solid grey 5px;
 }
 
-form {
-   padding-bottom: 50px;
+.identification {
+  padding-bottom: 50px;
 }
+
+/*form {
+   padding-bottom: 50px;
+}*/
 
 .form_info{
 	margin-left: 25%;
@@ -512,33 +500,115 @@ form {
 /**********************/
 /* portfolio page */
 /**********************/
-#library {
-  text-align: center;
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-  background: #ffffff;
+.media {
+  padding: 5px;
+  height: 200px;
 }
-.media img {
-  max-width: 100%;
+.media a{
+  height: 100%;
+  width: 100%;
 }
 .media a:hover {
   opacity: 0.7;
 }
-.aerial {
-  float: left;
-  /*width: 30%;*/
+.aerial, .dslr, .video {
+  text-align: center;
+  padding-bottom: 5%;
 }
-.dslr, .video{ 
-  float: left;
-  /*width: 30%;*/
-  margin-left: 5%;
+.media img.wide {
+    max-width: 100%;
+/*    max-height: 100%;*/
+    height: auto;
+}
+.media img.tall {
+    /*max-height: 100%;*/
+    max-width: 100%;
+    width: auto;
 }
 
-.video {
-  text-align: center;
-  display: inline-block;
+/* Overlay Effect */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 3%;
+  left: 0;
+  top: 55px;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
 }
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+/* Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  z-index: 10;
+}
+.close:hover,
+.close:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*slideshow*/
+.mySlides-aerial, .mySlides-dslr {
+  display: none;
+  text-align: center;
+}
+.mySlides-aerial img, .mySlides-dslr img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.mySlides-aerial p, .mySlides-dslr p {
+  color: #ffffff;
+}
+.cursor {
+  cursor: pointer
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+
 
 #logout-page {
   margin-top: 20vh;
