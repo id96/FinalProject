@@ -561,15 +561,15 @@ form .identification {
   cursor: pointer;
 }
 /*slideshow*/
-.mySlides-aerial, .mySlides-dslr {
+.mySlides-aerial, .mySlides-dslr, .mySlides-survey {
   display: none;
   text-align: center;
 }
-.mySlides-aerial img, .mySlides-dslr img {
+.mySlides-aerial img, .mySlides-dslr img, .mySlides-survey img {
   margin-left: auto;
   margin-right: auto;
 }
-.mySlides-aerial p, .mySlides-dslr p {
+.mySlides-aerial p, .mySlides-dslr p, .mySlides-survey p {
   color: #ffffff;
 }
 .cursor {

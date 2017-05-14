@@ -168,3 +168,37 @@ function showSlidesDSLR(n) {
   }
   slidesDSLR[slideIndexDSLR-1].style.display = "block";
 }
+
+
+
+// overlay effect for dslr portfolio
+function openModalSurvey() {
+  document.getElementById('myModal-survey').style.display = "block";
+}
+
+function closeModalSurvey() {
+  document.getElementById('myModal-survey').style.display = "none";
+}
+
+var slideIndexSurvey = 1;
+showSlidesSurvey(slideIndexSurvey);
+
+function plusSlidesSurvey(n) {
+  showSlidesSurvey(slideIndexSurvey += n);
+}
+
+function currentSlideSurvey(n) {
+  showSlidesSurvey(slideIndexSurvey = n);
+}
+
+function showSlidesSurvey(n) {
+  var i;
+  
+  var slidesSurvey = document.getElementsByClassName("mySlides-survey");
+  if (n > slidesSurvey.length) {slideIndexSurvey = 1}
+  if (n < 1) {slideIndexSurvey = slidesSurvey.length}
+  for (i = 0; i < slidesSurvey.length; i++) {
+      slidesSurvey[i].style.display = "none";
+  }
+  slidesSurvey[slideIndexSurvey-1].style.display = "block";
+}
