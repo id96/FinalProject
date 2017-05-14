@@ -26,10 +26,10 @@
 
 
 	<div class="container">
-		<div class="row table">
+		<div class="col-lg-6 col-md-12 col-sm-8"> 
 			<!-- SUMMARY TABLE -->
 			<h3>PRICING SUMMARY</h3>
-		    <div class="plan col-lg-3 col-sm-6">
+		    <div class="plan col-lg-6 col-sm-6">
 		        <h3>0-1999 Sq. Ft</h3>       
 		        <ul>
 		            <b>Aerial Pictures - </b> $75<br>
@@ -39,7 +39,7 @@
 		        </ul> 
 		    </div>
 			
-		    <div class="plan col-lg-3 col-sm-6">
+		    <div class="plan col-lg-6 col-sm-6">
 		        <h3>2000-2999 Sq. Ft</h3>        
 		        <ul>
 		            <b>Aerial Pictures - </b> $100 <br>
@@ -49,7 +49,7 @@
 		        </ul>    
 		    </div>
 			
-		    <div class="plan col-lg-3 col-sm-6">
+		    <div class="plan col-lg-6 col-sm-6">
 		        <h3>3000-4999 Sq. Ft</h3>
 		        <ul>
 		            <b>Aerial Pictures - </b> $125 <br>
@@ -59,7 +59,7 @@
 		        </ul>
 		    </div>
 			
-		    <div class="plan col-lg-3 col-sm-6">
+		    <div class="plan col-lg-6 col-sm-6">
 		        <h3>>5000 Sq. Ft</h3>		
 		        <ul>
 		            <b>Aerial Pictures - </b> $150 <br>
@@ -73,9 +73,12 @@
 
             </div>
 		    <!-- END OF SUMMARY TABLE -->
+		 	
         </div>
+
+        
 		    <!-- PRICE GENERATOR -->
-		    <div class='plan col-lg-12 col-sm-12' id="generator">
+		    <div class='plan col-lg-6 col-sm-6' id="generator">
 		    	<h3>PRICE GENERATOR</h1>
 		    	<div class='price_form'>
 				    <form action="price.php" method="post">
@@ -103,6 +106,7 @@
 				</div> <!-- end of price form div  -->
 			</div>
 			<!-- END OF PRICE GENERATOR -->
+		
 		
 <?php
 	if(isset($_POST['submit'])) {
