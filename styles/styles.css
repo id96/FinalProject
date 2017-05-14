@@ -202,10 +202,10 @@ header {
     text-align: left;
 }
 
-#price_area {
+/*#price_area {
   padding-top: 2%;
   padding-bottom: 2%;
-}
+}*/
 
 .discount {
   text-decoration: underline;
@@ -242,8 +242,8 @@ header {
 }
 .main_wrapper_services h1 {
 	text-align: center;
-	padding-top: 2%;
-	padding-bottom: 2%;
+	/*padding-top: 2%;*/
+	/*padding-bottom: 2%;*/
 }
 .videoWrapper {
 	position: relative;
@@ -508,7 +508,7 @@ form .identification {
   opacity: 0.7;
 }
 .aerial, .dslr, .video {
-  text-align: center;
+  /*text-align: center;*/
   padding-bottom: 5%;
 }
 .media img.wide {
