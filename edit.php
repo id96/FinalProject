@@ -120,6 +120,7 @@
                         <br>
                         <input class='button' type='radio' name='photo_type' value='DSLR'>DSLR
                         <br>
+                        <input class='button' type='radio' name='photo_type' value='Land Surveying'>Land Surveying
                         <input type="submit" name="submit_image" value="Click to submit">
                     </form>
                 </div> <!-- end of plan div  -->
