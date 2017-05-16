@@ -78,7 +78,7 @@
         
 		    <!-- PRICE GENERATOR -->
 		    <div class='plan col-lg-12 col-sm-12' id="generator">
-		    	<h3>PRICE GENERATOR</h1>
+		    	<h1>PRICE GENERATOR</h1>
 		    	<div class='price_form'>
 				    <form action="price.php" method="post">
 						<label>What Services Would You Like?</label>
@@ -93,7 +93,7 @@
 						<label>Video Walk Thru</label>
 						<br>
 						<label>Property Area</label>
-							<select class="button" name="area" required>
+							<select class="button" name="area">
 								<option value= "0-1999">0-1999 Sq. Ft</option>
 								<option value="2000-2999">2000-2999 Sq. Ft</option>
 								<option value="3000-4999">3000-4999 Sq. Ft</option>
