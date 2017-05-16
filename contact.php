@@ -25,6 +25,14 @@
 		<!-- <h1>Contact</h1> -->
 		<div class= "contact-containter">
 			<h1 class="contact_head"> Get In Touch </h1>
+			<div class='contact_head'>
+				<p>Brendan Viselli</p>
+				<span class='contact_info'><a href="tel:7818355410">(781)-835-5410</a></span><br>
+				<span class='contact_info'><a href="mailto:visellib@bc.edu?Subject=Hello%20again" target="_top">visellib@bc.edu</a></span><br>
+				<p>Jonathan Parece</p>
+				<span class='contact_info'><a href="tel:5084239989">(508)-423-9989</a></span> <br>
+				<span class='contact_info'><a href="mailto:jjparece@loyola.edu?Subject=Hello%20again" target="_top">jjparece@loyola.edu</a></span> <br>
+			</div>
 			<form action="contact.php" method="POST" class='identification'>
  				<div class='form_info'>
  					<div class='response'>
