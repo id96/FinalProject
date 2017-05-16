@@ -31,18 +31,18 @@
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>0-1999 Sq. Ft</h3>       
 		        <ul>
-		            Aerial Pictures - $75<br>
-		            DSLR Photography - $100<br>
-		            Video Walk Thru - $200	<br>
-		            TOTAL - $325 save $50!	
+                    <li>Aerial Pictures - $75</li><br>
+		            <li>DSLR Photography - $100</li><br>
+		            <li>Video Walk Thru - $200</li><br>
+		            <li>TOTAL - $325 save $50!</li>	
 		        </ul> 
 		    </div>
 			
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>2000-2999 Sq. Ft</h3>        
 		        <ul>
-		            Aerial Pictures - $100 <br>
-		            DSLR Photography - $125 <br>
+		            </li>Aerial Pictures - $100</li><br>
+		            </li>DSLR Photography - $125 <br>
 		            Video Walk Thru - $225  <br>
 		            TOTAL - $400, save $50!	
 		        </ul>    

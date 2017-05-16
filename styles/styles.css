@@ -269,6 +269,10 @@ button {
 	border-top: solid grey 3px;
     border-bottom: solid grey 3px;
 }
+
+.price_form > ul {
+    list-style-type:none;
+}
 /**********************/
 /* services page */
 /**********************/
