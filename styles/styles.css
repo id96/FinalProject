@@ -262,7 +262,7 @@ button {
   text-decoration-style: bold italic underline;
 }
 
-#smalltables {
+.smalltables {
     border: solid grey 3px;
     border-right: solid grey 3px;
 	border-left: solid grey 3px;
