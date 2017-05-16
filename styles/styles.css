@@ -417,6 +417,12 @@ button {
 /* contact page */
 /**********************/
 
+.contact {
+  font-size: 1em;
+  text-align: left;
+}
+
+
 
 .contact_head {
 	/*font-style: italic;*/
