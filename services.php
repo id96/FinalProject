@@ -29,7 +29,7 @@
 						<h2> Aerial </h2>
 						<div class="description-container">
 							<img src="media/aerial_surveying.jpg">
-							<p>Using sUAS from DJI, our Aerial services include photography and videography. Every angle of the subject will be captured and then edited in post production to ensure high quality. </p>
+							<p>Using sUAS (Small Unmanned Aircraft Systems) from DJI (Dà-Jiāng Innovations, a drone technology company), our Aerial services include photography and videography. Every angle of the subject will be captured and then edited in post production to ensure high quality. </p>
 			                    <p> Perfect for: </p>
 			                    <ul>
 			                        <li> Real-Estate </li>
@@ -48,7 +48,7 @@
 						<h2> DSLR Photography </h2>
 						<div class="description-container">
 							<img src="media/dslr_living_room.jpg">
-							<p> Using Canon DSLRs, East Coast Drones can capture interior and exterior still-pictures of the subject.</p>
+							<p> Using Canon DSLRs (Digital Single-Lens Reflex Cameras), East Coast Drones can capture interior and exterior still-pictures of the subject.</p>
 			                <div id="perfect">
 			                    <p> Perfect for: </p>
 			                    <ul>
@@ -68,7 +68,7 @@
 							<div class= "videoWrapper">
 								<iframe width="300" height="245" src="https://www.youtube.com/embed/BGz-CwtJP6Q" frameborder="0" allowfullscreen></iframe>
 							</div>
-							<p> Using stabilizers from DJI, a walk-thru tour of the subject can be created, producing a smooth, first person point of view for the viewer.</p>
+							<p>Using stabilizers from DJI (Dà-Jiāng Innovations, a drone technology company), a walk-thru tour of the subject can be created, producing a smooth, first person point of view for the viewer.</p>
 			                    <p> Perfect for: </p>
 			                    <ul>
 			                        <li> Promotional Videos </li>
