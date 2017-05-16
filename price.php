@@ -8,7 +8,7 @@
 	    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	    <script src="https://use.fontawesome.com/252db8b05d.js"></script>
-		<link rel="stylesheet" type="text/css" href="styles/styles.css"<>
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 		<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 	    <script type="text/javascript" src="js/main.js"></script>
 	</head>
