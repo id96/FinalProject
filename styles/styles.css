@@ -422,7 +422,18 @@ button {
   text-align: left;
 }
 
-
+.owner_data{
+	float: left;
+	width: 50%;
+	padding-bottom: 5%;
+}
+#owners{
+	padding-top: 4%;
+	border-top: none;
+}
+.mail{
+	text-transform: none;
+}
 
 .contact_head {
 	/*font-style: italic;*/
