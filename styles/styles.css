@@ -568,7 +568,9 @@ form .identification {
 .table {
   color: #000000;
 }
-
+.plan ul {
+	list-style-type: none;
+}
 /**********************/
 /* portfolio page */
 /**********************/

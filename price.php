@@ -31,9 +31,9 @@
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>0-1999 Sq. Ft</h3>       
 		        <ul>
-                    <li>Aerial Pictures - $75</li><br>
-		            <li>DSLR Photography - $100</li><br>
-		            <li>Video Walk Thru - $200</li><br>
+                    <li>Aerial Pictures - $75</li>
+		            <li>DSLR Photography - $100</li>
+		            <li>Video Walk Thru - $200</li>
 		            <li>TOTAL - $325 save $50!</li>	
 		        </ul> 
 		    </div>
@@ -41,30 +41,30 @@
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>2000-2999 Sq. Ft</h3>        
 		        <ul>
-		            </li>Aerial Pictures - $100</li><br>
-		            </li>DSLR Photography - $125 <br>
-		            Video Walk Thru - $225  <br>
-		            TOTAL - $400, save $50!	
+		            <li>Aerial Pictures - $100</li>
+		            <li>DSLR Photography - $125</li>
+		            <li>Video Walk Thru - $225  </li>
+		            <li>TOTAL - $400, save $50!	</li>
 		        </ul>    
 		    </div>
 			
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>3000-4999 Sq. Ft</h3>
 		        <ul>
-		            Aerial Pictures - $125 <br>
-		            DSLR Photography - $150 <br>
-		            Video Walk Thru - $250 <br>		
-		            TOTAL - $475, save $50!		
+		            <li>Aerial Pictures - $125</li>
+		            <li>DSLR Photography - $150 </li>
+		            <li>Video Walk Thru - $250 </li>	
+		            <li>TOTAL - $475, save $50!</li>		
 		        </ul>
 		    </div>
 			
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>>5000 Sq. Ft</h3>		
 		        <ul>
-		            Aerial Pictures - $150 <br>
-		            DSLR Photography - $175 <br>
-		            Video Walk Thru - $275 <br>
-		            TOTAL - $550, save $50!				
+		            <li>Aerial Pictures - $150 </li>
+		            <li>DSLR Photography - $175</li>
+		            <li>Video Walk Thru - $275 </li>
+		            <li>TOTAL - $550, save $50!</li>				
 		        </ul>
 		    </div>	
             <div id="discount">
