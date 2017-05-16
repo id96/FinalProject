@@ -17,8 +17,8 @@
 
 <?php 
 	include 'header.php';
-	// include 'config.php';
-	// $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
+	include 'config.php';
+	$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ("Unable to connect to MySQL");
 ?>
 
 <div class='main_wrapper_services'>
@@ -84,13 +84,13 @@
 				    <form action="price.php" method="post">
 						<label>What Services Would You Like?</label>
 						<br>
-						<input class='button' type='checkbox' name='Aerial'>
+						<input class='button' type='checkbox' name='aerial'>
 						<label>Aerial Pictures</label>
 						<br>
-						<input class='button' type='checkbox' name='DSLR'>
+						<input class='button' type='checkbox' name='dslr'>
 						<label>DSLR Photography</label>
 						<br>
-						<input class='button' type='checkbox' name='Video'>
+						<input class='button' type='checkbox' name='video'>
 						<label>Video Walk Thru</label>
 						<br>
 						<label>Property Area</label>
@@ -111,66 +111,43 @@
 <?php
 	if(isset($_POST['submit'])) {
 		$total = 0;
-		if(isset($_POST['area'])) {
-			$area = $_POST['area']; 
-			if ($area === '0-1999') {
-				if(isset($_POST['Aerial'])){
-					$total = $total + 75;
-				}
-				if(isset($_POST['DSLR'])){
-					$total = $total + 100;
-				}
-				if(isset($_POST['Video'])){
-					$total = $total + 200;
-				}
-				if(isset($_POST['Aerial'])&&isset($_POST['DSLR'])&&isset($_POST['Video'])){
-					$total = $total - 50;
-				}
-			}
-			if ($area === '2000-2999') {
-				if(isset($_POST['Aerial'])){
-					$total = $total + 100;
-				}
-				if(isset($_POST['DSLR'])){
-					$total = $total + 125;
-				}
-				if(isset($_POST['Video'])){
-					$total = $total + 225;
-				}
-				if(isset($_POST['Aerial'])&&isset($_POST['DSLR'])&&isset($_POST['Video'])){
-					$total = $total - 50;
-				}
-			}
-			if ($area === '3000-4999') {
-				if(isset($_POST['Aerial'])){
-					$total = $total + 125;
-				}
-				if(isset($_POST['DSLR'])){
-					$total = $total + 150;
-				}
-				if(isset($_POST['Video'])){
-					$total = $total + 250;
-				}
-				if(isset($_POST['Aerial'])&&isset($_POST['DSLR'])&&isset($_POST['Video'])){
-					$total = $total - 50;
-				}
-			}
-			if ($area === '>5000') {
-				if(isset($_POST['Aerial'])){
-					$total = $total + 150;
-				}
-				if(isset($_POST['DSLR'])){
-					$total = $total + 175;
-				}
-				if(isset($_POST['Video'])){
-					$total = $total + 275;
-				}
-				if(isset($_POST['Aerial'])&&isset($_POST['DSLR'])&&isset($_POST['Video'])){
-					$total = $total - 50;
-				}
+		$options = [];
+		$search_values = ['aerial','dslr','video'];
+		
+		//Figure out what services are selected
+		foreach ($search_values as $x) {
+			if(isset($_POST["$x"])){ 
+				$search_term = "type = '$x'";
+				array_push($options,$search_term);
 			}
 		}
-		echo "<div class='price'><p><span id='price_response'>Total = $$total</span></p></div>";
+		
+		//Formate the SQL statement
+		if(isset($_POST['area'])) {
+			$area = filter_var($_POST['area'], FILTER_SANITIZE_STRING); 
+			$query = "SELECT * from prices WHERE square_footage = '$area'";
+			if (!empty($options)){
+				$query .= ' AND (';
+				$query .=implode(' OR ', $options );
+				$query .=')';
+			}
+			
+			$results = $mysqli->query($query);
+			
+			//Calculate prices
+			if ($results->num_rows==0 || empty($options)){
+				echo "<div class='price'><p><span id='price_response'>Total = $$total</span></p></div>";
+			}
+			else {
+				if ($results->num_rows==3){
+					$total = $total - 50;
+				}
+				while ($prices = $results->fetch_assoc()) {
+					$total = $total + $prices['price'];
+				}
+				echo "<div class='price'><p><span id='price_response'>Total = $$total</span></p></div>";
+			}
+		}
 	}
 	?>
 	</div>
