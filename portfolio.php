@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://use.fontawesome.com/252db8b05d.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
     <script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 </head>
