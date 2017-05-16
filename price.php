@@ -31,40 +31,40 @@
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>0-1999 Sq. Ft</h3>       
 		        <ul>
-		            <b>Aerial Pictures - </b> $75<br>
-		            <b>DSLR Photography - </b> $100<br>
-		            <b>Video Walk Thru - </b> $200	<br>
-		            <b>TOTAL - </b><span>$325</span>, save $50!	
+		            Aerial Pictures - $75<br>
+		            DSLR Photography - $100<br>
+		            Video Walk Thru - $200	<br>
+		            TOTAL - $325 save $50!	
 		        </ul> 
 		    </div>
 			
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>2000-2999 Sq. Ft</h3>        
 		        <ul>
-		            <b>Aerial Pictures - </b> $100 <br>
-		            <b>DSLR Photography - </b> $125 <br>
-		            <b>Video Walk Thru - </b> $225  <br>
-		            <b>TOTAL - </b><span>$400</span>, save $50!	
+		            Aerial Pictures - $100 <br>
+		            DSLR Photography - $125 <br>
+		            Video Walk Thru - $225  <br>
+		            TOTAL - $400, save $50!	
 		        </ul>    
 		    </div>
 			
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>3000-4999 Sq. Ft</h3>
 		        <ul>
-		            <b>Aerial Pictures - </b> $125 <br>
-		            <b>DSLR Photography - </b> $150 <br>
-		            <b>Video Walk Thru - </b> $250 <br>		
-		            <b>TOTAL - </b><span>$475</span>, save $50!		
+		            Aerial Pictures - $125 <br>
+		            DSLR Photography - $150 <br>
+		            Video Walk Thru - $250 <br>		
+		            TOTAL - $475, save $50!		
 		        </ul>
 		    </div>
 			
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
 		        <h3>>5000 Sq. Ft</h3>		
 		        <ul>
-		            <b>Aerial Pictures - </b> $150 <br>
-		            <b>DSLR Photography - </b> $175 <br>
-		            <b>Video Walk Thru - </b> $275 <br>
-		            <b>TOTAL - </b><span>$550</span>, save $50!				
+		            Aerial Pictures - $150 <br>
+		            DSLR Photography - $175 <br>
+		            Video Walk Thru - $275 <br>
+		            TOTAL - $550, save $50!				
 		        </ul>
 		    </div>	
             <div id="discount">
