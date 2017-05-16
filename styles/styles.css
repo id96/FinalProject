@@ -571,6 +571,7 @@ form .identification {
 .media {
   padding: 5px;
   height: 170px;
+  overflow: hidden;
 }
 .media img:hover {
   opacity: 0.5;
