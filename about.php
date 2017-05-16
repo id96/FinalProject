@@ -23,6 +23,9 @@
 	<div class="row table">
 		<div class='about_content'>
 			<h1>About</h1>
+            <div class="plan col-lg-12 col-md-12 col-sm-12">
+            <p>East Coast Drones is run by two young professionals who aim to provide our clients with the best work possible through photography and cinematography. Our goal is to create meaningful relationships with clients. We strive to exceed expectations by delivering high quality aerial photography & videography, still photography, and walk-through tours.</p>
+            </div>
 			<div class="plan col-lg-6 col-md-6 col-sm-12">
 				<div class="leftcol_bren">
 					<div class="image">
