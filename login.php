@@ -71,9 +71,14 @@
 		//Note: This SQL lacks proper security. That's coming later
 		$query = "SELECT * 
 					FROM login
-					WHERE username = '$post_username'";
-
-		$result = $mysqli->query($query);
+					WHERE username = ?";
+		$stmt = $mysqli->stmt_init();
+		 if ($stmt->prepare($query)) {
+ 			$stmt->bind_param("s", $post_username);
+ 			$stmt->execute();
+ 			$result = $stmt->get_result();
+ 		}
+		//$result = $mysqli->query($query);
 
 		//Make sure there is exactly one user with this username
 		if ( $result && $result->num_rows == 1) {

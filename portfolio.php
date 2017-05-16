@@ -168,11 +168,11 @@ echo "<div class='container'>";
 	 <?php
 	 	// get Survey photos from DB
 	 	$landSurvey = $mysqli->query("SELECT * FROM media WHERE type_of_photography = 'Land Surveying'");
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	    $k = 1;
-=======
+//=======
 	    $k = 0;
->>>>>>> 65ce5a48311c49d695a0b7da4761e3bee71db7c3
+//>>>>>>> 65ce5a48311c49d695a0b7da4761e3bee71db7c3
 	    while ($row = $landSurvey->fetch_assoc()){
 	      $media_id = $row['mediaID'];
 	      $property_id = $row['propertyID'];
@@ -221,6 +221,24 @@ echo "<div class='container'>";
   </div> <!-- end of modal content -->
 </div> <!-- end of modal div -->
 <!-- end of Land Surveying section -->
+
+<div class="col-lg-12 col-md-12 col-sm-8">
+	<h1>VIDEO WALKTHROUGH</h1>
+				<div class= "videoWrapper2">
+					<iframe src="https://player.vimeo.com/video/185839002" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+				<div class= "videoWrapper2">
+					<iframe src="https://player.vimeo.com/video/180075346" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+				<div class= "videoWrapper2">
+					<iframe width="640" height="360" src="https://www.youtube.com/embed/Tz1EYi9JV5I" frameborder="0" allowfullscreen></iframe>
+				</div>
+
+</div>
+
+
+
+
 
 </div>
 </div>

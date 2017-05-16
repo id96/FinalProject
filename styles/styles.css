@@ -295,6 +295,21 @@ button {
     padding-bottom: 2%;
     margin-left: 12%;
 }
+
+.videoWrapper2 { /*On portfolio page wrapper */
+	position: relative;
+    min-height: 248px;
+
+}
+.videoWrapper2 iframe { /*On portfolio page wrapper */
+	position: inherit;
+    top: 0px;
+    left: 0px;
+    /* width: 77%; */
+    padding-bottom: 2%;
+    /* margin-left: 12%; */
+}
+
 .service {
 	/*float: left;*/
     /*width: 33%;*/
