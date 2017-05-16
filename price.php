@@ -25,7 +25,7 @@
 
 
 	<div class="container">
-		<div class="col-lg-6 col-md-12 col-sm-8 largetables"> 
+		<div class="col-lg-12 col-md-12 col-sm-8 largetables"> 
 			<!-- SUMMARY TABLE -->
 			<h3>PRICING SUMMARY</h3>
 		    <div class="plan col-lg-6 col-sm-6 smalltables">
