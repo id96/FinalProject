@@ -5,9 +5,7 @@
 	<meta charset="UTF-8">
     <title>East Coast Drones</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">  -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <script src="https://use.fontawesome.com/252db8b05d.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css"<?php echo time(); ?>>
@@ -72,15 +70,15 @@
             <!-- Simple cell layout, no padding. -->
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 services-cell no-gutter">         
                 <h2>AERIAL</h2>
-                <p>Using sUAS from DJI, our Aerial services include photography and videography. Every angle of the subject will be captured and then edited in post production to ensure high quality. </p>
+                <p>Using sUAS (Small Unmanned Aircraft Systems) from DJI (Dà-Jiāng Innovations, a drone technology company), our Aerial services include photography and videography. Every angle of the subject will be captured and then edited in post production to ensure high quality. </p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 services-cell no-gutter">         
                 <h2>DSLR</h2>
-                <p>Using Canon DSLRs, East Coast Drones can capture interior and exterior still-pictures of the subject.</p>
+                <p>Using Canon DSLRs (Digital Single-Lens Reflex Cameras), East Coast Drones can capture interior and exterior still-pictures of the subject.</p>
             </div> 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 services-cell no-gutter">         
                 <h2>VIDEO WALK-THRU</h2>
-                <p>Using stabilizers from DJI, a walk-thru tour of the subject can be created, producing a smooth, first person point of view for the viewer.</p>
+                <p>Using stabilizers from DJI (Dà-Jiāng Innovations, a drone technology company), a walk-thru tour of the subject can be created, producing a smooth, first person point of view for the viewer.</p>
             </div>
         </div>
         </div>
